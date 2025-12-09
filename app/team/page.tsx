@@ -128,7 +128,7 @@ export default function TeamPage() {
                   {/* Avatar */}
                   <div className="relative mb-4">
                     <div
-                      className="w-32 h-32 rounded-2xl overflow-hidden bg-secondary p-2"
+                      className="w-32 h-32 rounded-full overflow-hidden bg-secondary p-2"
                       style={{
                         boxShadow: "var(--icon-shadow)",
                       }}
@@ -138,12 +138,12 @@ export default function TeamPage() {
                         alt={member.name}
                         width={128}
                         height={128}
-                        className="w-full h-full object-contain rounded-xl"
+                        className="w-full h-full object-cover rounded-full"
                       />
                     </div>
                     {/* Hover glow effect */}
                     <div
-                      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+                      className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
                       style={{
                         boxShadow: "var(--card-glow)",
                       }}

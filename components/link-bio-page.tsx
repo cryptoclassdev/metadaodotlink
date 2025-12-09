@@ -5,6 +5,7 @@ import { ProfileSection } from "./profile-section"
 import { LinkCard } from "./link-card"
 import { SocialFooter } from "./social-footer"
 import { Globe, Youtube, Users, Calendar, FileCode, ImageIcon } from "lucide-react"
+import { ArticleMedium, UsersThree, UsersFour, FilmReel, Palette } from "@phosphor-icons/react"
 import { DottedGlowBackground } from "./ui/dotted-glow-background"
 
 const links = [
@@ -28,27 +29,33 @@ const links = [
   },
   {
     title: "Team",
-    description: "",
+    description: "The minds behind MetaDAO.",
     href: "/team",
-    icon: Users,
+    icon: UsersThree,
   },
   {
     title: "Animation Archive",
-    description: "Animations on MetaDAO",
-    href: "https://resources.example.com",
-    icon: Youtube,
+    description: "Relive the funniest and most iconic MetaDAO animations.",
+    href: "/animation-archive",
+    icon: FilmReel,
   },
   {
     title: "Futards",
     description: "Community of Futards",
     href: "https://www.futard.io/",
-    icon: Users,
+    icon: UsersFour,
+  },
+  {
+    title: "Blog",
+    description: "Deep dives, updates, and insights from the MetaDAO ecosystem.",
+    href: "https://blog.metadao.fi/",
+    icon: ArticleMedium,
   },
   {
     title: "Brands and Assets",
     description: "Official Brand and Assets",
     href: "https://www.futard.io/",
-    icon: ImageIcon,
+    icon: Palette,
   },
 ]
 
@@ -85,7 +92,7 @@ export function LinkBioPage() {
       <div className="fixed inset-0 z-0 bg-background" />
 
       <DottedGlowBackground
-        className="pointer-events-none fixed inset-0 z-0"
+        className="pointer-events-none fixed inset-0 z-0 mask-radial-to-90% mask-radial-at-center"
         opacity={0.8}
         gap={16}
         radius={1.8}
