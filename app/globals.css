@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to warm finance-friendly palette with coral accent */
+  --background: #fafafa; /* Off-white background */
+  --foreground: #111111; /* Black text */
+  --card: #ffffff; /* Pure white cards */
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #eb5a54; /* Coral/Salmon primary accent */
+  --primary-foreground: #ffffff;
+  --secondary: #fff2f0; /* Light accent background */
+  --secondary-foreground: #111111;
+  --muted: #e5e5e5; /* Light grey */
+  --muted-foreground: #6b6b6b; /* Mid grey body copy */
+  --accent: #eb5a54; /* Coral accent for interactive elements */
+  --accent-foreground: #ffffff;
+  --destructive: #eb5a54;
+  --destructive-foreground: #ffffff;
+  --border: #e5e5e5; /* Light grey borders */
+  --input: #e5e5e5;
+  --ring: #eb5a54; /* Coral focus ring */
+  --chart-1: #eb5a54;
+  --chart-2: #333333;
+  --chart-3: #6b6b6b;
+  --chart-4: #fff2f0;
+  --chart-5: #e5e5e5;
+  --radius: 1.5rem;
+  --sidebar: #fafafa;
+  --sidebar-foreground: #111111;
+  --sidebar-primary: #eb5a54;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fff2f0;
+  --sidebar-accent-foreground: #111111;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #eb5a54;
+
+  /* Updated shadow variables for warm palette */
+  --card-shadow: 0 4px 24px -4px rgba(235, 90, 84, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 12px 40px -8px rgba(235, 90, 84, 0.15), 0 4px 16px -4px rgba(0, 0, 0, 0.08);
+  --card-glow: none;
+  --icon-bg: #fff2f0; /* Light accent background for icons */
+  --icon-shadow: 0 2px 8px -2px rgba(235, 90, 84, 0.1);
+}
+
+.dark {
+  /* Dark mode with coral accents */
+  --background: #111111;
+  --foreground: #fafafa;
+  --card: #1a1a1a;
+  --card-foreground: #fafafa;
+  --popover: #1a1a1a;
+  --popover-foreground: #fafafa;
+  --primary: #eb5a54;
+  --primary-foreground: #ffffff;
+  --secondary: #333333; /* Dark grey */
+  --secondary-foreground: #fafafa;
+  --muted: #333333;
+  --muted-foreground: #6b6b6b;
+  --accent: #eb5a54;
+  --accent-foreground: #ffffff;
+  --destructive: #eb5a54;
+  --destructive-foreground: #ffffff;
+  --border: #333333;
+  --input: #333333;
+  --ring: #eb5a54;
+  --chart-1: #eb5a54;
+  --chart-2: #6b6b6b;
+  --chart-3: #e5e5e5;
+  --chart-4: #fff2f0;
+  --chart-5: #333333;
+  --sidebar: #111111;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #eb5a54;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #333333;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #333333;
+  --sidebar-ring: #eb5a54;
+
+  /* Dark mode shadows with coral glow */
+  --card-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.5), 0 2px 12px -2px rgba(0, 0, 0, 0.3), inset 0 1px 0 0
+    rgba(235, 90, 84, 0.05);
+  --card-shadow-hover: 0 16px 48px -8px rgba(0, 0, 0, 0.6), 0 8px 24px -4px rgba(0, 0, 0, 0.4), inset 0 1px 0 0
+    rgba(235, 90, 84, 0.08);
+  --card-glow: 0 0 40px -12px rgba(235, 90, 84, 0.15);
+  --icon-bg: #333333;
+  --icon-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(235, 90, 84, 0.05);
+}
+
+@theme inline {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
