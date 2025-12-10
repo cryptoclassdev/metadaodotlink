@@ -2,15 +2,21 @@
 
 import { motion } from "framer-motion"
 import { ChevronRight, type LucideIcon } from "lucide-react"
+import { LottieIcon } from "./lottie-icon"
+import type { LottieIconName } from "@/lib/lottieIcons"
+import { useState } from "react"
 
 interface LinkCardProps {
   title: string
   description?: string
   href: string
-  icon: LucideIcon
+  icon?: LucideIcon
+  lottieIcon?: LottieIconName
 }
 
-export function LinkCard({ title, description, href, icon: Icon }: LinkCardProps) {
+export function LinkCard({ title, description, href, icon: Icon, lottieIcon }: LinkCardProps) {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
     <motion.a
       href={href}
@@ -33,6 +39,8 @@ export function LinkCard({ title, description, href, icon: Icon }: LinkCardProps
         `,
         border: "1px solid rgba(255, 255, 255, 0.5)",
       }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       whileHover={{
         scale: 1.02,
         y: -4,
@@ -94,7 +102,11 @@ export function LinkCard({ title, description, href, icon: Icon }: LinkCardProps
           border: "1px solid rgba(255, 255, 255, 0.6)",
         }}
       >
-        <Icon className="h-5 w-5" strokeWidth={1.75} />
+        {lottieIcon ? (
+          <LottieIcon name={lottieIcon} size={20} trigger="hover" isHovered={isHovered} />
+        ) : Icon ? (
+          <Icon className="h-5 w-5" strokeWidth={1.75} />
+        ) : null}
       </div>
 
       <div className="relative flex-1 min-w-0">
