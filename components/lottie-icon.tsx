@@ -33,6 +33,21 @@ export function LottieIcon({
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
   const [iconData, setIconData] = useState<any>(null)
+  const [hasAutoPlayed, setHasAutoPlayed] = useState(false)
+
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    // Check if device is mobile based on screen width
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
     const fetchIconData = async () => {
@@ -53,12 +68,19 @@ export function LottieIcon({
     fetchIconData()
   }, [name])
 
-  // Trigger animation on hover
+  // Trigger animation on hover (desktop only)
   useEffect(() => {
-    if (isHovered && playerRef.current && trigger === "hover") {
+    if (isHovered && playerRef.current && trigger === "hover" && !isMobile) {
       playerRef.current.playFromBeginning()
     }
-  }, [isHovered, trigger])
+  }, [isHovered, trigger, isMobile])
+
+  useEffect(() => {
+    if (isMobile && !hasAutoPlayed && playerRef.current && iconData && !isLoading) {
+      playerRef.current.playFromBeginning()
+      setHasAutoPlayed(true)
+    }
+  }, [isMobile, hasAutoPlayed, iconData, isLoading])
 
   // Handle loading complete
   const handleReady = () => {
