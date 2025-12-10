@@ -4,8 +4,6 @@ import { motion } from "framer-motion"
 import { ProfileSection } from "./profile-section"
 import { LinkCard } from "./link-card"
 import { SocialFooter } from "./social-footer"
-import { Globe, Youtube, Users, Calendar, FileCode, ImageIcon } from "lucide-react"
-import { ArticleMedium, UsersThree, UsersFour, FilmReel, Palette } from "@phosphor-icons/react"
 import { DottedGlowBackground } from "./ui/dotted-glow-background"
 
 const links = [
@@ -13,49 +11,49 @@ const links = [
     title: "metadao.fi",
     description: "MetaDAO Official Website",
     href: "https://metadao.fi/",
-    icon: Globe,
+    lottieIcon: "web" as const,
   },
   {
     title: "Team",
     description: "The brilliant minds behind MetaDAO",
     href: "/team",
-    icon: UsersThree,
+    lottieIcon: "team" as const,
   },
   {
     title: "Docs",
     description: "Official Documentation",
     href: "https://docs.metadao.fi/",
-    icon: FileCode,
+    lottieIcon: "docs" as const,
   },
   {
     title: "ICO Calendar",
     description: "Past & upcoming ICOs",
     href: "https://www.idontbelieve.link/",
-    icon: Calendar,
+    lottieIcon: "calendar" as const,
   },
   {
     title: "Animation Archive",
-    description: "Collection of all animations.",
+    description: "Kollan and Proph3t's 2D adventures.",
     href: "/animation-archive",
-    icon: FilmReel,
+    lottieIcon: "video" as const,
   },
   {
     title: "Futards",
     description: "Community of Futards",
     href: "https://www.futard.io/",
-    icon: UsersFour,
+    lottieIcon: "community" as const,
   },
   {
     title: "Blog",
     description: "MetaDAO insights and updates.",
     href: "https://blog.metadao.fi/",
-    icon: ArticleMedium,
+    lottieIcon: "blog" as const,
   },
   {
     title: "Brands and Assets",
     description: "Official Brand and Assets",
     href: "https://www.figma.com/design/7evoELIV2agMVOrfcKVUea/Brand-Kits---MetaDAO?node-id=10-989&t=Ia5gRyqXZMAykKpE-1",
-    icon: Palette,
+    lottieIcon: "brand" as const,
   },
 ]
 
