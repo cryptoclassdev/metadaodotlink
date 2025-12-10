@@ -5,10 +5,9 @@ import { ArrowLeft, Loader2 } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
-const tweetIds = [
+const animationTweetIds = [
   "1948822243896877403",
   "1951017233922269491",
-  "1952792331641602261",
   "1953804344983502976",
   "1956023221545001212",
   "1958672887117742217",
@@ -22,8 +21,11 @@ const tweetIds = [
   "1978906017812369891",
   "1981442070062694695",
   "1983975628803051689",
-];
+]
 
+const clipsTweetIds = ["1952792331641602261"]
+
+const allTweetIds = [...animationTweetIds, ...clipsTweetIds]
 
 export default function AnimationArchivePage() {
   const [isLoading, setIsLoading] = useState(true)
@@ -35,7 +37,7 @@ export default function AnimationArchivePage() {
       if (!containerRef.current) return false
 
       const iframes = containerRef.current.querySelectorAll("iframe.twitter-tweet-rendered")
-      return iframes.length === tweetIds.length
+      return iframes.length === allTweetIds.length
     }
 
     const loadTwitterWidgets = () => {
@@ -145,22 +147,37 @@ export default function AnimationArchivePage() {
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3">Animation Archive</h1>
             <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto text-pretty">
-            Kollan and Proph3t&apos;s 2D adventures
+              Kollan and Proph3t&apos;s 2D adventures
             </p>
           </div>
         </div>
 
-        <div
-          ref={containerRef}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 transition-opacity duration-500 ${isLoading ? "invisible opacity-0" : "visible opacity-100"}`}
-        >
-          {tweetIds.map((id) => (
-            <div key={id} className="flex justify-center">
-              <blockquote className="twitter-tweet" data-theme="light" data-align="center">
-                <a href={`https://twitter.com/MetaDAOProject/status/${id}`}>Tweet {id}</a>
-              </blockquote>
+        <div className={`transition-opacity duration-500 ${isLoading ? "invisible opacity-0" : "visible opacity-100"}`}>
+          <div className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Tales from MetaDAO</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {animationTweetIds.map((id) => (
+                <div key={id} className="flex justify-center">
+                  <blockquote className="twitter-tweet" data-theme="light" data-align="center">
+                    <a href={`https://twitter.com/MetaDAOProject/status/${id}`}>Tweet {id}</a>
+                  </blockquote>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Clips</h2>
+            <div className="flex flex-col items-center gap-6 md:gap-8">
+              {clipsTweetIds.map((id) => (
+                <div key={id} className="flex justify-center">
+                  <blockquote className="twitter-tweet" data-theme="light" data-align="center">
+                    <a href={`https://twitter.com/MetaDAOProject/status/${id}`}>Tweet {id}</a>
+                  </blockquote>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </main>
