@@ -33,7 +33,7 @@ const links = [
   },
   {
     title: "Animation Archive",
-    description: "Kollan and Proph3t's 2D adventures.",
+    description: "Kollan and Proph3t's 2D adventures",
     href: "/animation-archive",
     lottieIcon: "video" as const,
   },
@@ -45,7 +45,7 @@ const links = [
   },
   {
     title: "Blog",
-    description: "MetaDAO insights and updates.",
+    description: "MetaDAO insights and updates",
     href: "https://blog.metadao.fi/",
     lottieIcon: "blog" as const,
   },
