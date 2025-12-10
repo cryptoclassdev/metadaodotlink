@@ -12,15 +12,6 @@ export const metadata: Metadata = {
   title: "metadao.link",
   description: "Metadao Resource Hub.",
   generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/images/metadao-square-logo.avif",
-        type: "image/avif",
-      },
-    ],
-    apple: "/images/metadao-square-logo.avif",
-  },
 }
 
 export const viewport: Viewport = {
