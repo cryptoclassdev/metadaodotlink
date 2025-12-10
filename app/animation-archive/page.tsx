@@ -145,7 +145,7 @@ export default function AnimationArchivePage() {
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3">Animation Archive</h1>
             <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto text-pretty">
-              Explore MetaDAO&apos;s collection of animations and visual content
+            Kollan and Proph3t&apos;s 2D adventures
             </p>
           </div>
         </div>
