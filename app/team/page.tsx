@@ -60,7 +60,7 @@ export default function TeamPage() {
       <div className="fixed inset-0 z-0 bg-background" />
 
       <DottedGlowBackground
-        className="pointer-events-none fixed inset-0 z-0"
+        className="pointer-events-none fixed inset-0 z-0 mask-radial-to-90% mask-radial-at-center"
         opacity={0.8}
         gap={16}
         radius={1.8}
