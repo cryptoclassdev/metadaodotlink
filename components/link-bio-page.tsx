@@ -16,6 +16,12 @@ const links = [
     icon: Globe,
   },
   {
+    title: "Team",
+    description: "The brilliant minds behind MetaDAO",
+    href: "/team",
+    icon: UsersThree,
+  },
+  {
     title: "Docs",
     description: "Official Documentation",
     href: "https://docs.metadao.fi/",
@@ -23,19 +29,13 @@ const links = [
   },
   {
     title: "ICO Calendar",
-    description: "Know about upcoming ICOs",
+    description: "Past & upcoming ICOs",
     href: "https://www.idontbelieve.link/",
     icon: Calendar,
   },
   {
-    title: "Team",
-    description: "The minds behind MetaDAO.",
-    href: "/team",
-    icon: UsersThree,
-  },
-  {
     title: "Animation Archive",
-    description: "Relive the funniest and most iconic MetaDAO animations.",
+    description: "Collection of all animations.",
     href: "/animation-archive",
     icon: FilmReel,
   },
@@ -47,14 +47,14 @@ const links = [
   },
   {
     title: "Blog",
-    description: "Deep dives, updates, and insights from the MetaDAO ecosystem.",
+    description: "MetaDAO insights and updates.",
     href: "https://blog.metadao.fi/",
     icon: ArticleMedium,
   },
   {
     title: "Brands and Assets",
     description: "Official Brand and Assets",
-    href: "https://www.futard.io/",
+    href: "https://www.figma.com/design/7evoELIV2agMVOrfcKVUea/Brand-Kits---MetaDAO?node-id=10-989&t=Ia5gRyqXZMAykKpE-1",
     icon: Palette,
   },
 ]
