@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ChevronRight, type LucideIcon } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
 import { LottieIcon } from "./lottie-icon"
 import type { LottieIconName } from "@/lib/lottieIcons"
 import { useState } from "react"
@@ -17,107 +17,41 @@ interface LinkCardProps {
 export function LinkCard({ title, description, href, icon: Icon, lottieIcon }: LinkCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
+  const isExternalLink = href.startsWith("http")
+
   return (
     <motion.a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative flex w-full items-center gap-4 rounded-[20px] px-4 py-4 overflow-hidden"
-      style={{
-        background: "rgba(255, 255, 255, 0.45)",
-        backdropFilter: "blur(40px) saturate(180%)",
-        WebkitBackdropFilter: "blur(40px) saturate(180%)",
-        boxShadow: `
-          inset 0 1px 1px rgba(255, 255, 255, 0.9),
-          inset 0 -1px 1px rgba(255, 255, 255, 0.1),
-          0 0 0 1px rgba(255, 255, 255, 0.6),
-          0 2px 4px rgba(0, 0, 0, 0.02),
-          0 4px 8px rgba(0, 0, 0, 0.04),
-          0 8px 16px rgba(0, 0, 0, 0.06),
-          0 16px 32px rgba(0, 0, 0, 0.08),
-          0 32px 64px rgba(0, 0, 0, 0.06)
-        `,
-        border: "1px solid rgba(255, 255, 255, 0.5)",
-      }}
+      target={isExternalLink ? "_blank" : "_self"}
+      rel={isExternalLink ? "noopener noreferrer" : undefined}
+      className="group relative flex flex-row items-center gap-4 rounded-3xl px-5 py-4 overflow-hidden bg-[#ffe5e5] border border-[#ffd5d5] hover:border-[#ffc5c5] transition-all duration-200"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{
         scale: 1.02,
-        y: -4,
-        boxShadow: `
-          inset 0 1px 1px rgba(255, 255, 255, 1),
-          inset 0 -1px 1px rgba(255, 255, 255, 0.2),
-          0 0 0 1px rgba(255, 255, 255, 0.7),
-          0 4px 8px rgba(0, 0, 0, 0.04),
-          0 8px 16px rgba(0, 0, 0, 0.06),
-          0 16px 32px rgba(0, 0, 0, 0.08),
-          0 32px 64px rgba(0, 0, 0, 0.1),
-          0 48px 96px rgba(0, 0, 0, 0.08)
-        `,
+        y: -2,
       }}
       whileTap={{
         scale: 0.98,
-        y: 0,
       }}
       transition={{
         type: "spring",
-        stiffness: 500,
-        damping: 30,
+        stiffness: 400,
+        damping: 25,
       }}
     >
-      <div
-        className="absolute inset-x-0 top-0 h-[50%] pointer-events-none"
-        style={{
-          background: "linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.1) 50%, transparent 100%)",
-          borderRadius: "20px 20px 0 0",
-        }}
-      />
-
-      <div
-        className="absolute inset-x-0 bottom-0 h-[30%] pointer-events-none"
-        style={{
-          background: "linear-gradient(0deg, rgba(0,0,0,0.02) 0%, transparent 100%)",
-          borderRadius: "0 0 20px 20px",
-        }}
-      />
-
-      {/* Hover glow effect */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none rounded-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background: "radial-gradient(ellipse at center, rgba(255,255,255,0.4), transparent 70%)",
-        }}
-      />
-
-      <div
-        className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-gray-700"
-        style={{
-          background: "rgba(255, 255, 255, 0.8)",
-          boxShadow: `
-            inset 0 1px 2px rgba(255, 255, 255, 1),
-            inset 0 -1px 1px rgba(0, 0, 0, 0.02),
-            0 2px 4px rgba(0, 0, 0, 0.04),
-            0 4px 8px rgba(0, 0, 0, 0.04)
-          `,
-          border: "1px solid rgba(255, 255, 255, 0.6)",
-        }}
-      >
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm">
         {lottieIcon ? (
-          <LottieIcon name={lottieIcon} size={20} trigger="hover" isHovered={isHovered} />
+          <LottieIcon name={lottieIcon} size={32} trigger="hover" isHovered={isHovered} />
         ) : Icon ? (
-          <Icon className="h-5 w-5" strokeWidth={1.75} />
+          <Icon className="h-8 w-8 text-[#ff5555]" strokeWidth={2} />
         ) : null}
       </div>
 
-      <div className="relative flex-1 min-w-0">
-        <h3 className="text-[15px] font-semibold text-gray-800 tracking-tight">{title}</h3>
-        {description && <p className="text-[12px] text-gray-500 truncate mt-0.5">{description}</p>}
+      <div className="flex-1 min-w-0">
+        <h3 className="text-2xl font-bold text-black italic font-serif leading-tight">{title}</h3>
+        {description && <p className="text-sm text-[#ff5555] mt-1 leading-relaxed">{description}</p>}
       </div>
-
-      <ChevronRight
-        className="relative h-5 w-5 text-gray-400 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-gray-600"
-        strokeWidth={2}
-      />
     </motion.a>
   )
 }

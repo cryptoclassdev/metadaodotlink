@@ -1,0 +1,39 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+
+interface BentoCardProps {
+  title: string
+  icon?: string
+  href: string
+  variant?: "primary" | "secondary"
+  size?: "small" | "medium" | "large"
+  className?: string
+}
+
+export function BentoCard({ title, icon, href, variant = "primary", size = "medium", className }: BentoCardProps) {
+  const isPrimary = variant === "primary"
+  const isSmall = size === "small"
+
+  return (
+    <Link href={href} target="_blank" rel="noopener noreferrer" className={cn("block h-full", className)}>
+      <motion.div
+        className={cn(
+          "relative h-full rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center",
+          isPrimary ? "bg-[#ff4949] text-white" : "bg-white border-2 border-gray-200",
+          isSmall ? "min-h-[80px] max-h-[100px] p-4" : "min-h-[100px] max-h-[120px] p-4",
+        )}
+        whileHover={{ scale: 1.02, y: -4 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      >
+        <div className="flex items-center gap-3">
+          {icon && <span className="text-3xl">{icon}</span>}
+          <h3 className={cn("font-bold text-center", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
+        </div>
+      </motion.div>
+    </Link>
+  )
+}

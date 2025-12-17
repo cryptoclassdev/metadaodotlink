@@ -1,6 +1,5 @@
 "use client"
 
-import { DottedGlowBackground } from "@/components/ui/dotted-glow-background"
 import { ArrowLeft, Loader2 } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
@@ -102,59 +101,44 @@ export default function AnimationArchivePage() {
   }, [])
 
   return (
-    <main className="relative min-h-screen px-4 py-8 md:py-12">
-      <div className="fixed inset-0 z-0 bg-background" />
-
-      <DottedGlowBackground
-        className="pointer-events-none fixed inset-0 z-0 mask-radial-to-90% mask-radial-at-center"
-        opacity={0.8}
-        gap={16}
-        radius={1.8}
-        colorLightVar="--color-neutral-400"
-        glowColorLightVar="--color-primary"
-        colorDarkVar="--color-neutral-600"
-        glowColorDarkVar="--color-primary"
-        backgroundOpacity={0.1}
-        speedMin={0.2}
-        speedMax={1.2}
-        speedScale={1}
-      />
-
+    <main className="relative min-h-screen px-4 py-8 md:py-12 bg-[#F5F1E8]">
       {isLoading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#F5F1E8]/80 backdrop-blur-sm">
           <div className="flex flex-col items-center gap-4">
             <div className="relative">
-              <Loader2 className="w-12 h-12 text-primary animate-spin" />
+              <Loader2 className="w-12 h-12 text-[#ff4949] animate-spin" />
               <div className="absolute inset-0 animate-ping">
-                <Loader2 className="w-12 h-12 text-primary/30" />
+                <Loader2 className="w-12 h-12 text-[#ff4949]/30" />
               </div>
             </div>
-            <p className="text-muted-foreground text-sm animate-pulse">Loading animation archive...</p>
+            <p className="text-gray-600 text-sm animate-pulse">Loading animation archive...</p>
           </div>
         </div>
       )}
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="mb-8 md:mb-12 flex flex-col items-center gap-4">
-          <Link
-            href="/"
-            className="self-start group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Home
+        <div className="mb-12 md:mb-16">
+          <Link href="/" className="inline-flex items-center gap-2 mb-8 md:mb-12 group">
+            <div className="w-10 h-10 rounded-full bg-[#ff4949] flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+              <ArrowLeft className="w-5 h-5" />
+            </div>
+            <span className="text-gray-700 font-medium group-hover:text-gray-900 transition-colors">Back</span>
           </Link>
 
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-balance mb-3">Animation Archive</h1>
-            <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto text-pretty">
-              Kollan and Proph3t&apos;s 2D adventures
-            </p>
+          <div className="text-center mb-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-balance mb-6">
+              <span className="text-[#ff4949] italic font-serif">Animation</span>{" "}
+              <span className="text-black font-serif">Archive</span>
+            </h1>
+            <p className="text-gray-700 text-lg md:text-xl">Proph3t & Kollan&apos;s 2D adventures</p>
           </div>
         </div>
 
-        <div className={`transition-opacity duration-500 ${isLoading ? "invisible opacity-0" : "visible opacity-100"}`}>
+        <div
+          className={`transition-opacity duration-500 ${isLoading ? "invisible opacity-0" : "visible opacity-100"}`}
+          ref={containerRef}
+        >
           <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Tales from MetaDAO</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {animationTweetIds.map((id) => (
                 <div key={id} className="flex justify-center">
@@ -167,7 +151,6 @@ export default function AnimationArchivePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Clips</h2>
             <div className="flex flex-col items-center gap-6 md:gap-8">
               {clipsTweetIds.map((id) => (
                 <div key={id} className="flex justify-center">
