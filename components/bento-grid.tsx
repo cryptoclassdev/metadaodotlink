@@ -12,19 +12,24 @@ export function BentoGrid() {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-auto">
       {/* Column 1: metadao.fi + ICO Calendar + Docs/Blog */}
       <div className="flex flex-col gap-4">
-        <BentoCard title="metadao.fi" icon="/home-icons/metadao.fi.png" href="https://metadao.fi/" variant="primary" />
+        <BentoCard
+          title="metadao.fi"
+          icon="/home-icons/metadaologo-icon.png"
+          href="https://metadao.fi/"
+          variant="primary"
+        />
         <CalendarCard />
         <div className="grid grid-cols-2 gap-4">
           <BentoCard
             title="Blog"
-            icon="/home-icons/blog.png"
+            icon="/home-icons/blog-icon.png"
             href="https://blog.metadao.fi/"
             variant="secondary"
             size="small"
           />
           <BentoCard
             title="Docs"
-            icon="/home-icons/docs.png"
+            icon="/home-icons/docs-icon.png"
             href="https://docs.metadao.fi/"
             variant="secondary"
             size="small"
@@ -40,9 +45,14 @@ export function BentoGrid() {
 
       {/* Column 3: Get Funded + Animations */}
       <div className="flex flex-col gap-4">
-        <BentoCard title="Get Funded" icon="/home-icons/get-funded.png" href="https://metadao.fi/" variant="primary" />
+        <BentoCard
+          title="Get Funded"
+          icon="/home-icons/getfunded-icon.png"
+          href="https://metadao.fi/"
+          variant="primary"
+        />
         <AnimationsCard />
-        <BentoCard title="Media" icon="/home-icons/media.png" href="https://metadao.fi/" variant="primary" />
+        <BentoCard title="Media" icon="/home-icons/media-icon.png" href="https://metadao.fi/" variant="primary" />
       </div>
 
       {/* Column 4: Team + Brand Kit + Get Token */}
@@ -50,11 +60,16 @@ export function BentoGrid() {
         <TeamCard />
         <BentoCard
           title="Brand Kit"
-          icon="/home-icons/brand-kit.png"
+          icon="/home-icons/brandkit-icon.png"
           href="https://www.figma.com/design/7evoELIV2agMVOrfcKVUea/Brand-Kits---MetaDAO?node-id=10-989&t=Ia5gRyqXZMAykKpE-1"
           variant="primary"
         />
-        <BentoCard title="Get Token" icon="/home-icons/get-token.png" href="https://metadao.fi/" variant="primary" />
+        <BentoCard
+          title="Get Token"
+          icon="/home-icons/gettoken-icon.png"
+          href="https://metadao.fi/"
+          variant="primary"
+        />
       </div>
     </div>
   )

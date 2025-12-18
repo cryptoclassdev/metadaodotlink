@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { Users } from "lucide-react"
 
 interface TeamCardProps {
   className?: string
@@ -34,7 +34,9 @@ export function TeamCard({ className }: TeamCardProps) {
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <div className="flex items-center gap-2 mb-3">
-          <Users className="w-7 h-7 text-white" />
+          <div className="relative w-8 h-8 flex-shrink-0">
+            <Image src="/home-icons/team-icon.png" alt="Team icon" width={32} height={32} className="object-contain" />
+          </div>
           <h3 className="text-2xl font-bold text-white">Team</h3>
         </div>
 
