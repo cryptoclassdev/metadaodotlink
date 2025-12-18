@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 interface BentoCardProps {
@@ -30,7 +31,17 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <div className="flex items-center gap-3">
-          {icon && <span className="text-3xl">{icon}</span>}
+          {icon && (
+            <div className="relative w-8 h-8 flex-shrink-0">
+              <Image
+                src={icon || "/placeholder.svg"}
+                alt={`${title} icon`}
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+            </div>
+          )}
           <h3 className={cn("font-bold text-center", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
         </div>
       </motion.div>
