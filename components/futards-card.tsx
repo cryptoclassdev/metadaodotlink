@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 interface FutardsCardProps {
@@ -24,7 +25,15 @@ export function FutardsCard({ className }: FutardsCardProps) {
       >
         {/* Red header section */}
         <div className="bg-[#FF6B6B] px-4 py-3 flex items-center gap-3">
-          <div className="text-white text-2xl">🧩</div>
+          <div className="relative w-8 h-8 flex-shrink-0">
+            <Image
+              src="/home-icons/futards-icon.png"
+              alt="Futards icon"
+              width={32}
+              height={32}
+              className="object-contain"
+            />
+          </div>
           <h3 className="text-white text-2xl font-bold">Futards</h3>
         </div>
 

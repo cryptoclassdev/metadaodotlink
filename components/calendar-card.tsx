@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { Calendar } from "lucide-react"
 
 interface CalendarCardProps {
   className?: string
@@ -24,7 +24,15 @@ export function CalendarCard({ className }: CalendarCardProps) {
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <div className="flex items-center gap-2 mb-3">
-          <Calendar className="w-6 h-6 text-white" />
+          <div className="relative w-8 h-8 flex-shrink-0">
+            <Image
+              src="/home-icons/icocalendar-icon.png"
+              alt="ICO Calendar icon"
+              width={32}
+              height={32}
+              className="object-contain"
+            />
+          </div>
           <h3 className="text-xl font-bold text-white">ICO Calendar</h3>
         </div>
 
