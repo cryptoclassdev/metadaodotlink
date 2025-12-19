@@ -22,15 +22,11 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
     <Link href={href} target="_blank" rel="noopener noreferrer" className={cn("block h-full", className)}>
       <motion.div
         className={cn(
-          "relative h-full rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg",
+          "relative h-full rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center",
           isPrimary ? "bg-[#ff4949] text-white" : "bg-white border-2 border-gray-200",
           isSmall ? "min-h-[80px] max-h-[100px] p-4" : "min-h-[100px] max-h-[120px] p-4",
         )}
-        whileHover={{
-          scale: 1.02,
-          y: -4,
-          boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
-        }}
+        whileHover={{ scale: 1.02, y: -4 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >

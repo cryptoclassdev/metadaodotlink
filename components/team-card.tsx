@@ -28,12 +28,8 @@ export function TeamCard({ className }: TeamCardProps) {
   return (
     <Link href="/team" className={cn("block h-full", className)}>
       <motion.div
-        className="relative h-full rounded-3xl overflow-hidden flex flex-col min-h-[280px] max-h-[400px] shadow-lg"
-        whileHover={{
-          scale: 1.02,
-          y: -4,
-          boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
-        }}
+        className="relative h-full rounded-3xl overflow-hidden flex flex-col min-h-[280px] max-h-[400px]"
+        whileHover={{ scale: 1.02, y: -4 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
