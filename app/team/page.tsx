@@ -68,7 +68,7 @@ const itemVariants = {
   },
 }
 
-const cardRotations = [0.99, -1.61, 1.44, -1.61°]
+const cardRotations = [0.99, -1.61, 1.44, -1.61]
 
 export default function TeamPage() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
@@ -135,7 +135,7 @@ export default function TeamPage() {
                   />
 
                   <div
-                    className={`absolute inset-0 flex items-center justify-center p-6 transition-opacity duration-300 rounded-xl ${
+                    className={`absolute inset-0 flex items-center justify-center p-4 transition-opacity duration-300 rounded-xl overflow-auto ${
                       hoveredCard === index ? "opacity-100" : "opacity-0 pointer-events-none"
                     }`}
                     style={{
@@ -143,7 +143,9 @@ export default function TeamPage() {
                       backgroundColor: hoveredCard === index ? "rgba(100, 100, 100, 0.7)" : "transparent",
                     }}
                   >
-                    <p className="text-white text-center text-sm leading-relaxed font-medium">{member.description}</p>
+                    <p className="text-white text-center text-xs leading-relaxed font-medium max-h-full overflow-y-auto">
+                      {member.description}
+                    </p>
                   </div>
 
                   <a
