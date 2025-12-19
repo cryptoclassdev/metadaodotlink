@@ -60,7 +60,12 @@ export function AnimationsCard({ className }: AnimationsCardProps) {
 
           {/* Placeholder Image */}
           <div className="flex-1 relative rounded-2xl overflow-hidden bg-gray-100 min-h-[140px]">
-            <Image src="/placeholder.svg?height=200&width=400" alt="MetaDAO Animation" fill className="object-cover" />
+            <Image
+              src="https://res.cloudinary.com/di6zkr8of/image/upload/v1766143350/screenshot-metadao_csdqii.png"
+              alt="MetaDAO Animation"
+              fill
+              className="object-cover"
+            />
           </div>
 
           {/* Timestamp */}
