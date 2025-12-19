@@ -35,7 +35,7 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-3">
           {icon && (
             <div className="relative w-8 h-8 flex-shrink-0">
               <Image
@@ -47,7 +47,7 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
               />
             </div>
           )}
-          <h3 className={cn("font-bold text-center", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
+          <h3 className={cn("font-bold", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
         </div>
       </motion.div>
     </Link>
