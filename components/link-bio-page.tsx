@@ -34,19 +34,7 @@ const itemVariants = {
 
 export function LinkBioPage() {
   return (
-    <main className="relative min-h-screen bg-[#f5f3ed] px-4 sm:px-6 py-8 sm:py-12 flex items-center justify-center overflow-hidden">
-      {/* Grid background pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, #000 1px, transparent 1px),
-            linear-gradient(to bottom, #000 1px, transparent 1px)
-          `,
-          backgroundSize: "40px 40px",
-        }}
-      />
-
+    <main className="relative min-h-screen bg-white px-4 sm:px-6 py-8 sm:py-12 flex items-center justify-center overflow-hidden">
       <motion.div
         initial="hidden"
         animate="visible"
