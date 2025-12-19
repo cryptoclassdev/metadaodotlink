@@ -40,15 +40,20 @@ export function LinkBioPage() {
         <div
           className="absolute"
           style={{
-            left: "-30%",
-            top: "-30%",
-            width: "60vw",
-            height: "60vw",
-            maxWidth: "1010px",
-            maxHeight: "1010px",
+            left: "-191px",
+            top: "801px",
+            width: "1010px",
+            height: "1010px",
           }}
         >
-          <Image src="/images/metadaologo-vector.png" alt="" fill className="object-contain opacity-20" priority />
+          <Image
+            src="/images/metadaologo-vector.png"
+            alt=""
+            width={1010}
+            height={1010}
+            className="object-contain opacity-20"
+            priority
+          />
         </div>
       </div>
 
