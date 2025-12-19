@@ -9,18 +9,17 @@ import { FutardsCard } from "./futards-card"
 
 export function BentoGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:h-[900px]">
-      {/* Column 1: metadao.fi + ICO Calendar + Docs/Blog */}
-      <div className="flex flex-col gap-4 h-full overflow-hidden">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* Column 1: metadao.fi (6.25rem) + ICO Calendar (36.75rem) + Blog/Docs (5rem) */}
+      {/* Total: 6.25 + 1 + 36.75 + 1 + 5 = 50rem */}
+      <div className="flex flex-col gap-4">
         <BentoCard
           title="metadao.fi"
           icon="/home-icons/metadaologo-icon.png"
           href="https://metadao.fi/"
           variant="primary"
         />
-        <div className="flex-1 min-h-0 overflow-auto">
-          <CalendarCard className="h-full" />
-        </div>
+        <CalendarCard className="h-[36.75rem]" />
         <div className="grid grid-cols-2 gap-4">
           <BentoCard
             title="Blog"
@@ -39,39 +38,36 @@ export function BentoGrid() {
         </div>
       </div>
 
-      {/* Column 2: WTF video + Futard Trade + Futards */}
-      <div className="flex flex-col gap-4 h-full overflow-hidden">
-        <VideoCard />
+      {/* Column 2: VideoCard (20.875rem) + Futard Trade (6.25rem) + Futards (20.875rem) */}
+      {/* Total: 20.875 + 1 + 6.25 + 1 + 20.875 = 50rem */}
+      <div className="flex flex-col gap-4">
+        <VideoCard className="h-[20.875rem]" />
         <BentoCard
           title="Futard Trade"
           icon="/home-icons/futardtrade-icon.png"
           href="https://metadao.fi/"
           variant="primary"
         />
-        <div className="flex-1 min-h-0 overflow-auto">
-          <FutardsCard className="h-full" />
-        </div>
+        <FutardsCard className="h-[20.875rem]" />
       </div>
 
-      {/* Column 3: Get Funded + Animations + Media */}
-      <div className="flex flex-col gap-4 h-full overflow-hidden">
+      {/* Column 3: Get Funded (6.25rem) + Animations (35.5rem) + Media (6.25rem) */}
+      {/* Total: 6.25 + 1 + 35.5 + 1 + 6.25 = 50rem */}
+      <div className="flex flex-col gap-4">
         <BentoCard
           title="Get Funded"
           icon="/home-icons/getfunded-icon.png"
           href="https://metadao.fi/"
           variant="primary"
         />
-        <div className="flex-1 min-h-0 overflow-auto">
-          <AnimationsCard className="h-full" />
-        </div>
+        <AnimationsCard className="h-[35.5rem]" />
         <BentoCard title="Media" icon="/home-icons/media-icon.png" href="https://metadao.fi/" variant="primary" />
       </div>
 
-      {/* Column 4: Team + Brand Kit + Get Token */}
-      <div className="flex flex-col gap-4 h-full overflow-hidden">
-        <div className="flex-1 min-h-0 overflow-auto">
-          <TeamCard className="h-full" />
-        </div>
+      {/* Column 4: Team (35.5rem) + Brand Kit (6.25rem) + Get Token (6.25rem) */}
+      {/* Total: 35.5 + 1 + 6.25 + 1 + 6.25 = 50rem */}
+      <div className="flex flex-col gap-4">
+        <TeamCard className="h-[35.5rem]" />
         <BentoCard
           title="Brand Kit"
           icon="/home-icons/brandkit-icon.png"
