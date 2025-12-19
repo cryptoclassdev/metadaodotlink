@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { VideoPlayer } from "@/components/ui/video-player"
 
@@ -15,11 +14,7 @@ export function VideoCard({ className }: VideoCardProps) {
 
   return (
     <div className={cn("relative h-full", className)}>
-      <motion.div
-        className="relative h-full rounded-3xl overflow-hidden flex flex-col"
-        whileHover={{ scale: 1.02, y: -4 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      >
+      <div className="relative h-full rounded-3xl overflow-hidden flex flex-col shadow-lg">
         <div className="bg-[#ff4949] px-6 py-2 text-center flex-shrink-0">
           <h3 className="text-base sm:text-lg font-bold text-white mb-0.5">WTF is MetaDAO?</h3>
           <p className="text-white text-[10px] sm:text-xs font-medium leading-tight">
@@ -34,7 +29,7 @@ export function VideoCard({ className }: VideoCardProps) {
             className="h-full w-full rounded-none shadow-none"
           />
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
