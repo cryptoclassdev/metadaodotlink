@@ -16,6 +16,13 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
   ({ className, thumbnailUrl, videoUrl, title, description, aspectRatio = "16/9", ...props }, ref) => {
     const [isModalOpen, setIsModalOpen] = React.useState(false)
 
+    const handleBackdropClick = (e: React.MouseEvent) => {
+      // Only close if clicking directly on the backdrop, not on children
+      if (e.target === e.currentTarget) {
+        setIsModalOpen(false)
+      }
+    }
+
     React.useEffect(() => {
       const handleEsc = (event: KeyboardEvent) => {
         if (event.key === "Escape") {
@@ -34,20 +41,42 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
       } else {
         document.body.style.overflow = "auto"
       }
+
+      return () => {
+        document.body.style.overflow = "auto"
+      }
     }, [isModalOpen])
+
+    const handleOpenModal = (e: React.MouseEvent | React.KeyboardEvent) => {
+      e.preventDefault()
+      e.stopPropagation()
+      setIsModalOpen(true)
+    }
+
+    const handleCloseModal = (e: React.MouseEvent) => {
+      e.preventDefault()
+      e.stopPropagation()
+      setIsModalOpen(false)
+    }
 
     return (
       <>
         <div
           ref={ref}
           className={cn(
-            "group relative cursor-pointer overflow-hidden rounded-lg shadow-lg",
+            "group relative cursor-pointer overflow-hidden",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
             className,
           )}
           style={{ aspectRatio }}
-          onClick={() => setIsModalOpen(true)}
-          onKeyDown={(e) => e.key === "Enter" && setIsModalOpen(true)}
+          onClick={handleOpenModal}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleOpenModal(e)
+            }
+          }}
+          onPointerEnter={(e) => e.stopPropagation()}
+          onPointerLeave={(e) => e.stopPropagation()}
           tabIndex={0}
           aria-label={`Play video: ${title || "video"}`}
           {...props}
@@ -75,26 +104,29 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
 
         {isModalOpen && (
           <div
-            className="fixed inset-0 z-50 flex animate-in fade-in-0 items-center justify-center bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex animate-in fade-in-0 items-center justify-center bg-black"
             aria-modal="true"
             role="dialog"
+            onClick={handleBackdropClick}
+            onPointerEnter={(e) => e.stopPropagation()}
+            onPointerLeave={(e) => e.stopPropagation()}
           >
             <button
-              onClick={() => setIsModalOpen(false)}
+              onClick={handleCloseModal}
               className="absolute right-4 top-4 z-50 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
               aria-label="Close video player"
             >
               <X className="h-6 w-6" />
             </button>
 
-            <div className="w-full max-w-4xl aspect-video p-4">
+            <div className="w-full h-full" onClick={(e) => e.stopPropagation()}>
               <iframe
                 src={videoUrl}
                 title={title || "video"}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="h-full w-full rounded-lg"
+                className="h-full w-full"
               ></iframe>
             </div>
           </div>
