@@ -35,9 +35,6 @@ export function VideoCard({ className }: VideoCardProps) {
       >
         <div className="bg-[#ff4949] px-6 py-2 text-center flex-shrink-0">
           <h3 className="text-base sm:text-lg font-bold text-white mb-0.5">WTF is MetaDAO?</h3>
-          <p className="text-white text-[10px] sm:text-xs font-medium leading-tight">
-            MetaDAO replaces token voting with prediction markets for governance.
-          </p>
         </div>
 
         <div className="flex-1 overflow-hidden">
