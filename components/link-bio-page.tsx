@@ -49,7 +49,7 @@ export function LinkBioPage() {
           zIndex: 0,
         }}
       >
-        <Image src="/images/metadaologo-vector.png" alt="" fill className="object-contain opacity-20" priority />
+        <Image src="/images/metadaologo-vector.png" alt="" fill className="object-contain opacity-100" priority />
       </div>
 
       <motion.div
