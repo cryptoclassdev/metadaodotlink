@@ -69,7 +69,7 @@ export function BentoGrid() {
           <BentoCard
             title="Get Funded"
             icon="/home-icons/getfunded-icon.png"
-            href="https://metadao.fi/"
+            href="https://metadao.typeform.com/to/DxVVAxhC"
             variant="primary"
           />
         </div>
