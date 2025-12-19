@@ -15,7 +15,7 @@ const socials = [
 export function SocialFooter() {
   return (
     <div className="flex flex-col items-center gap-4 sm:gap-6">
-      <div className="flex items-center gap-4 sm:gap-6">
+      <div className="flex items-center gap-4 sm:gap-6 bg-white rounded-full px-6 py-3 sm:px-8 sm:py-4 shadow-lg">
         {socials.map((social) => {
           const IconComponent = social.icon
           return (
