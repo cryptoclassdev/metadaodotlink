@@ -37,7 +37,7 @@ export function SocialFooter() {
       </div>
 
       <div className="text-center space-y-1">
-        <p className="text-xs sm:text-sm text-gray-500">© 2025 metadao.link. All rights reserved</p>
+        <p className="text-xs sm:text-sm text-gray-500">© 2025 metadao.link. All rights reserved.</p>
         <p className="text-xs text-gray-400">Created with love ❤️ by thecommunication.link</p>
       </div>
     </div>
