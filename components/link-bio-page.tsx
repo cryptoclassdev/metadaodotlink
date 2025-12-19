@@ -45,7 +45,7 @@ export function LinkBioPage() {
           height: "50vw",
           maxWidth: "1010px",
           maxHeight: "1010px",
-          transform: "translate(-20%, 50%)",
+          transform: "translate(-30%, 50%)",
           zIndex: 0,
         }}
       >
