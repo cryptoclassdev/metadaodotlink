@@ -68,7 +68,7 @@ const itemVariants = {
   },
 }
 
-const cardRotations = [0.99, -1.61, 1.44]
+const cardRotations = [0.99, -1.61, 1.44, -1.61°]
 
 export default function TeamPage() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
