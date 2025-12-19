@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { createPortal } from "react-dom"
 import { cn } from "@/lib/utils"
 import { Play, X } from "lucide-react"
 
@@ -20,6 +21,12 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
     ref,
   ) => {
     const [internalIsModalOpen, setInternalIsModalOpen] = React.useState(false)
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+      setMounted(true)
+      return () => setMounted(false)
+    }, [])
 
     const isControlled = isOpen !== undefined && onOpenChange !== undefined
     const isModalOpen = isControlled ? isOpen : internalIsModalOpen
@@ -46,12 +53,15 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
     React.useEffect(() => {
       if (isModalOpen) {
         document.body.style.overflow = "hidden"
+        document.body.style.pointerEvents = "none"
       } else {
         document.body.style.overflow = "auto"
+        document.body.style.pointerEvents = "auto"
       }
 
       return () => {
         document.body.style.overflow = "auto"
+        document.body.style.pointerEvents = "auto"
       }
     }, [isModalOpen])
 
@@ -66,6 +76,37 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
       e.stopPropagation()
       setIsModalOpen(false)
     }
+
+    const modalContent =
+      isModalOpen && mounted ? (
+        <div
+          className="fixed inset-0 z-[9999] flex animate-in fade-in-0 items-center justify-center bg-black"
+          style={{ pointerEvents: "auto" }}
+          aria-modal="true"
+          role="dialog"
+          onClick={handleBackdropClick}
+        >
+          <button
+            onClick={handleCloseModal}
+            type="button"
+            className="absolute right-4 top-4 z-[10000] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+            aria-label="Close video player"
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          <div className="w-full h-full" onClick={(e) => e.stopPropagation()}>
+            <iframe
+              src={videoUrl}
+              title={title || "video"}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="h-full w-full"
+            ></iframe>
+          </div>
+        </div>
+      ) : null
 
     return (
       <>
@@ -110,36 +151,7 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
           )}
         </div>
 
-        {isModalOpen && (
-          <div
-            className="fixed inset-0 z-50 flex animate-in fade-in-0 items-center justify-center bg-black"
-            aria-modal="true"
-            role="dialog"
-            onClick={handleBackdropClick}
-            onPointerEnter={(e) => e.stopPropagation()}
-            onPointerLeave={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={handleCloseModal}
-              type="button"
-              className="absolute right-4 top-4 z-[60] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
-              aria-label="Close video player"
-            >
-              <X className="h-6 w-6" />
-            </button>
-
-            <div className="w-full h-full" onClick={(e) => e.stopPropagation()}>
-              <iframe
-                src={videoUrl}
-                title={title || "video"}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="h-full w-full"
-              ></iframe>
-            </div>
-          </div>
-        )}
+        {mounted && modalContent && createPortal(modalContent, document.body)}
       </>
     )
   },
