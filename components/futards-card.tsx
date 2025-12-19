@@ -43,7 +43,7 @@ export function FutardsCard({ className }: FutardsCardProps) {
             src="https://res.cloudinary.com/di6zkr8of/image/upload/v1766155361/futard-ss_c1eb59.png"
             alt="Futards"
             fill
-            className="object-cover"
+            className="object-fit"
           />
         </div>
       </motion.div>
