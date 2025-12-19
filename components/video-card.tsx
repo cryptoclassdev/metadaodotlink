@@ -2,21 +2,16 @@
 
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { Play } from "lucide-react"
-import Image from "next/image"
+import { VideoPlayer } from "@/components/ui/video-player"
 
 interface VideoCardProps {
   className?: string
 }
 
 export function VideoCard({ className }: VideoCardProps) {
-  const videoUrl = "https://www.youtube.com/watch?v=B_-bh-CWgiE" // Replace with actual MetaDAO video URL
-  const videoId = "B_-bh-CWgiE" // Extract video ID
+  const videoId = "B_-bh-CWgiE"
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
-
-  const handleClick = () => {
-    window.open(videoUrl, "_blank", "noopener,noreferrer")
-  }
+  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`
 
   return (
     <div className={cn("relative h-full", className)}>
@@ -32,21 +27,12 @@ export function VideoCard({ className }: VideoCardProps) {
           </p>
         </div>
 
-        <div className="flex-1 relative group cursor-pointer overflow-hidden" onClick={handleClick}>
-          <Image
-            src={thumbnailUrl || "/placeholder.svg"}
-            alt="WTF is MetaDAO Video Thumbnail"
-            fill
-            className="object-cover"
+        <div className="flex-1 overflow-hidden">
+          <VideoPlayer
+            thumbnailUrl={thumbnailUrl}
+            videoUrl={embedUrl}
+            className="h-full w-full rounded-none shadow-none"
           />
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-16 h-16 bg-white/95 rounded-full flex items-center justify-center shadow-xl"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <Play className="w-8 h-8 text-gray-400 ml-1" fill="currentColor" />
-          </motion.div>
         </div>
       </motion.div>
     </div>
