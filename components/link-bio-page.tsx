@@ -39,16 +39,21 @@ export function LinkBioPage() {
       <div
         className="fixed pointer-events-none"
         style={{
-          left: "-10%",
-          top: "65%",
-          width: "52.6vw",
-          height: "52.6vw",
-          maxWidth: "1010px",
-          maxHeight: "1010px",
+          left: "calc(-10vw)",
+          bottom: "calc(35vh - 500px)",
+          width: "min(52.6vw, 1010px)",
+          height: "min(52.6vw, 1010px)",
           zIndex: -1,
         }}
       >
-        <Image src="/images/metadaologo-vector.png" alt="" fill className="object-contain opacity-20" priority />
+        <Image
+          src="/images/metadaologo-vector.png"
+          alt=""
+          fill
+          className="object-contain opacity-50"
+          priority
+          onLoad={() => console.log("[v0] Background logo loaded")}
+        />
       </div>
 
       <motion.div
