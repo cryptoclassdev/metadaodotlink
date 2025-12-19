@@ -19,7 +19,7 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
   const isSmall = size === "small"
 
   return (
-    <Link href={href} target="_blank" rel="noopener noreferrer" className={cn("block", className)}>
+    <Link href={href} target="_blank" rel="noopener noreferrer" className={cn("relative", className)}>
       <motion.div
         className={cn(
           "relative rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg",
@@ -27,10 +27,12 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
           isSmall ? "h-[4rem]" : "h-[5rem]",
           "p-4",
         )}
+        style={{ willChange: "transform, box-shadow" }}
+        initial={{ scale: 1, y: 0 }}
         whileHover={{
           scale: 1.02,
           y: -4,
-          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
         }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
