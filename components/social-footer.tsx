@@ -5,10 +5,10 @@ import { Github, Youtube } from "lucide-react"
 import { TwitterIcon, TelegramIcon, DiscordIcon } from "./social-icons"
 
 const socials = [
-  { icon: Youtube, href: "https://youtube.com/@metadaoproject", label: "YouTube" },
   { icon: TwitterIcon, href: "https://x.com/MetaDAOProject", label: "Twitter" },
   { icon: TelegramIcon, href: "https://tg.metadao.fi", label: "Telegram" },
   { icon: DiscordIcon, href: "https://discord.com/invite/metadao", label: "Discord" },
+  { icon: Youtube, href: "https://youtube.com/@metadaoproject", label: "YouTube" },
   { icon: Github, href: "https://github.com/metaDAOproject", label: "GitHub" },
 ]
 
