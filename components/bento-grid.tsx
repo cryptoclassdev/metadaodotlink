@@ -53,7 +53,7 @@ export function BentoGrid() {
           <BentoCard
             title="Futard Trade"
             icon="/home-icons/futardtrade-icon.png"
-            href="https://metadao.fi/"
+            href="https://www.futard.trade/"
             variant="primary"
           />
         </div>
