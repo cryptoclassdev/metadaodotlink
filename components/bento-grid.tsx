@@ -97,9 +97,9 @@ export function BentoGrid() {
         </div>
         <div className="order-[12] sm:order-none">
           <BentoCard
-            title="Get Token"
+            title="Get $META"
             icon="/home-icons/gettoken-icon.png"
-            href="https://metadao.fi/"
+            href="https://jup.ag/tokens/METAwkXcqyXKy1AtsSgJ8JiUHwGCafnZL38n3vYmeta"
             variant="primary"
           />
         </div>
