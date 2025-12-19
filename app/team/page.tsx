@@ -13,7 +13,7 @@ const teamMembers = [
     twitter: "https://x.com/metaproph3t",
     image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/proph3t_yg2ldb.jpg",
     description:
-      "Visionary leader driving MetaDAO's mission to revolutionize decentralized governance through innovative futarchy mechanisms.",
+      "The visionary creator of MetaDAO and cult leader of the futards. He’s been trading in the market since before he could walk, made money shorting his own brother’s marriage and is rumored to be the illegitimate son of futarchy’s creator, Robin Hanson. Prior to founding MetaDAO, he worked as a professional trader and wrote some of the most used smart contracts in EVM..",
   },
   {
     name: "Nallok",
@@ -21,7 +21,7 @@ const teamMembers = [
     twitter: "https://x.com/metanallok",
     image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/nallock-dp_wkbstp.jpg",
     description:
-      "Strategic architect building the infrastructure that enables prediction markets to make better collective decisions for DAOs.",
+      "The man who knows everyone, co-founder of MetaDAO and operations specialist. He’s been in crypto longer than most of the people he trades against have been alive, runs his own Solana validator and was once the largest long tail stablecoin market maker in the world. The people you trust call him for advice. ",
   },
   {
     name: "Pileks",
