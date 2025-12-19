@@ -9,16 +9,16 @@ import { FutardsCard } from "./futards-card"
 
 export function BentoGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:min-h-[900px]">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:h-[900px]">
       {/* Column 1: metadao.fi + ICO Calendar + Docs/Blog */}
-      <div className="flex flex-col gap-4 h-full">
+      <div className="flex flex-col gap-4 h-full overflow-hidden">
         <BentoCard
           title="metadao.fi"
           icon="/home-icons/metadaologo-icon.png"
           href="https://metadao.fi/"
           variant="primary"
         />
-        <div className="flex-1 min-h-0">
+        <div className="flex-1 min-h-0 overflow-auto">
           <CalendarCard className="h-full" />
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -40,7 +40,7 @@ export function BentoGrid() {
       </div>
 
       {/* Column 2: WTF video + Futard Trade + Futards */}
-      <div className="flex flex-col gap-4 h-full">
+      <div className="flex flex-col gap-4 h-full overflow-hidden">
         <VideoCard />
         <BentoCard
           title="Futard Trade"
@@ -48,28 +48,28 @@ export function BentoGrid() {
           href="https://metadao.fi/"
           variant="primary"
         />
-        <div className="flex-1 min-h-0">
-          <FutardsCard />
+        <div className="flex-1 min-h-0 overflow-auto">
+          <FutardsCard className="h-full" />
         </div>
       </div>
 
       {/* Column 3: Get Funded + Animations + Media */}
-      <div className="flex flex-col gap-4 h-full">
+      <div className="flex flex-col gap-4 h-full overflow-hidden">
         <BentoCard
           title="Get Funded"
           icon="/home-icons/getfunded-icon.png"
           href="https://metadao.fi/"
           variant="primary"
         />
-        <div className="flex-1 min-h-0">
+        <div className="flex-1 min-h-0 overflow-auto">
           <AnimationsCard className="h-full" />
         </div>
         <BentoCard title="Media" icon="/home-icons/media-icon.png" href="https://metadao.fi/" variant="primary" />
       </div>
 
       {/* Column 4: Team + Brand Kit + Get Token */}
-      <div className="flex flex-col gap-4 h-full">
-        <div className="flex-1 min-h-0">
+      <div className="flex flex-col gap-4 h-full overflow-hidden">
+        <div className="flex-1 min-h-0 overflow-auto">
           <TeamCard className="h-full" />
         </div>
         <BentoCard
