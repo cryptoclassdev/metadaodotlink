@@ -76,12 +76,6 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
       setIsModalOpen(true)
     }
 
-    const handleCloseModal = (e: React.MouseEvent) => {
-      e.preventDefault()
-      e.stopPropagation()
-      setIsModalOpen(false)
-    }
-
     return (
       <>
         <div
@@ -133,8 +127,8 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
             onClick={handleBackdropClick}
           >
             <button
-              onClick={handleCloseModal}
-              className="absolute right-4 top-4 z-[60] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+              onClick={() => setIsModalOpen(false)}
+              className="absolute right-4 top-4 z-[100] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
               aria-label="Close video player"
               type="button"
             >
