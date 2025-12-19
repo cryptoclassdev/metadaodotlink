@@ -31,7 +31,7 @@ export function VideoCard({ className }: VideoCardProps) {
         }
         whileTap={!isModalOpen ? { scale: 0.98 } : undefined}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        style={isModalOpen ? { pointerEvents: "none" } : undefined}
+        style={{ pointerEvents: isModalOpen ? "none" : "auto" }}
       >
         <div className="bg-[#ff4949] px-6 py-2 text-center flex-shrink-0">
           <h3 className="text-base sm:text-lg font-bold text-white mb-0.5">WTF is MetaDAO?</h3>
