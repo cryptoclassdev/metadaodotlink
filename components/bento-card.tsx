@@ -29,7 +29,7 @@ export function BentoCard({
 
   return (
     <motion.div
-      className={cn("relative", className)}
+      className={cn("relative rounded-3xl overflow-hidden", className)}
       initial={{ scale: 1, y: 0 }}
       whileHover={{
         scale: 1.02,
