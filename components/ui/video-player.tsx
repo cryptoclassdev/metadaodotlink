@@ -131,13 +131,12 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
             aria-modal="true"
             role="dialog"
             onClick={handleBackdropClick}
-            onPointerEnter={(e) => e.stopPropagation()}
-            onPointerLeave={(e) => e.stopPropagation()}
           >
             <button
               onClick={handleCloseModal}
-              className="absolute right-4 top-4 z-50 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+              className="absolute right-4 top-4 z-[60] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
               aria-label="Close video player"
+              type="button"
             >
               <X className="h-6 w-6" />
             </button>
