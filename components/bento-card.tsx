@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 
 interface BentoCardProps {
   title: string
-  subtitle?: string // Added optional subtitle prop
+  subtitle?: string
   icon?: string
   href: string
   variant?: "primary" | "secondary"
@@ -50,12 +50,12 @@ export function BentoCard({
         >
           <div className="flex items-center justify-center gap-3">
             {icon && (
-              <div className="relative w-6 h-6 flex-shrink-0">
+              <div className={cn("relative flex-shrink-0", isSmall ? "w-5 h-5" : "w-6 h-6")}>
                 <Image
                   src={icon || "/placeholder.svg"}
                   alt={`${title} icon`}
-                  width={24}
-                  height={24}
+                  width={isSmall ? 20 : 24}
+                  height={isSmall ? 20 : 24}
                   className="object-contain"
                 />
               </div>
