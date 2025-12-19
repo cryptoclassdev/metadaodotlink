@@ -19,39 +19,42 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
   const isSmall = size === "small"
 
   return (
-    <Link href={href} target="_blank" rel="noopener noreferrer" className={cn("relative", className)}>
-      <motion.div
-        className={cn(
-          "relative rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg",
-          isPrimary ? "bg-[#ff4949] text-white" : "bg-white border-2 border-gray-200",
-          isSmall ? "h-[4rem]" : "h-[5rem]",
-          "p-4",
-        )}
-        style={{ willChange: "transform, box-shadow" }}
-        initial={{ scale: 1, y: 0 }}
-        whileHover={{
-          scale: 1.02,
-          y: -4,
-          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-        }}
-        whileTap={{ scale: 0.98 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      >
-        <div className="flex items-center justify-center gap-3">
-          {icon && (
-            <div className="relative w-6 h-6 flex-shrink-0">
-              <Image
-                src={icon || "/placeholder.svg"}
-                alt={`${title} icon`}
-                width={24}
-                height={24}
-                className="object-contain"
-              />
-            </div>
+    <motion.div
+      className={cn("relative", className)}
+      initial={{ scale: 1, y: 0 }}
+      whileHover={{
+        scale: 1.02,
+        y: -4,
+        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+      }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    >
+      <Link href={href} target="_blank" rel="noopener noreferrer" className="block h-full">
+        <div
+          className={cn(
+            "relative rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg h-full",
+            isPrimary ? "bg-[#ff4949] text-white" : "bg-white border-2 border-gray-200",
+            isSmall ? "h-[4rem]" : "h-[5rem]",
+            "p-4",
           )}
-          <h3 className={cn("font-bold", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
+        >
+          <div className="flex items-center justify-center gap-3">
+            {icon && (
+              <div className="relative w-6 h-6 flex-shrink-0">
+                <Image
+                  src={icon || "/placeholder.svg"}
+                  alt={`${title} icon`}
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
+            )}
+            <h3 className={cn("font-bold", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
+          </div>
         </div>
-      </motion.div>
-    </Link>
+      </Link>
+    </motion.div>
   )
 }
