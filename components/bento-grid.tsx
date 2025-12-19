@@ -10,8 +10,8 @@ import { FutardsCard } from "./futards-card"
 export function BentoGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {/* Column 1: metadao.fi (5rem) + ICO Calendar (20rem) + Blog/Docs (4rem) */}
-      {/* Total: 5 + 1 + 20 + 1 + 4 = 31rem */}
+      {/* Column 1: metadao.fi (5rem) + ICO Calendar (21rem) + Blog/Docs (4rem) */}
+      {/* Total: 5 + 1 + 21 + 1 + 4 = 32rem */}
       <div className="flex flex-col gap-4">
         <BentoCard
           title="metadao.fi"
@@ -19,7 +19,7 @@ export function BentoGrid() {
           href="https://metadao.fi/"
           variant="primary"
         />
-        <CalendarCard className="h-[20rem]" />
+        <CalendarCard className="h-[21rem]" />
         <div className="grid grid-cols-2 gap-4">
           <BentoCard
             title="Blog"
