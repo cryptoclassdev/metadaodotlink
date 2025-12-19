@@ -10,8 +10,8 @@ interface VideoCardProps {
 }
 
 export function VideoCard({ className }: VideoCardProps) {
-  const videoUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Replace with actual MetaDAO video URL
-  const videoId = "dQw4w9WgXcQ" // Extract video ID
+  const videoUrl = "https://www.youtube.com/watch?v=B_-bh-CWgiE" // Replace with actual MetaDAO video URL
+  const videoId = "B_-bh-CWgiE" // Extract video ID
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
 
   const handleClick = () => {
