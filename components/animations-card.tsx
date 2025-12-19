@@ -24,12 +24,12 @@ export function AnimationsCard({ className }: AnimationsCardProps) {
       >
         {/* Center-aligned header Section */}
         <div className="bg-[#ff4949] p-4 flex items-center justify-center gap-3">
-          <div className="relative w-8 h-8 flex-shrink-0">
+          <div className="relative w-6 h-6 flex-shrink-0">
             <Image
               src="/home-icons/animation-icon.png"
               alt="Animations icon"
-              width={32}
-              height={32}
+              width={24}
+              height={24}
               className="object-contain"
             />
           </div>

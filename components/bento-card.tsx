@@ -37,12 +37,12 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
       >
         <div className="flex items-center justify-center gap-3">
           {icon && (
-            <div className="relative w-8 h-8 flex-shrink-0">
+            <div className="relative w-6 h-6 flex-shrink-0">
               <Image
                 src={icon || "/placeholder.svg"}
                 alt={`${title} icon`}
-                width={32}
-                height={32}
+                width={24}
+                height={24}
                 className="object-contain"
               />
             </div>

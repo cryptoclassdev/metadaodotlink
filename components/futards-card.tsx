@@ -28,12 +28,12 @@ export function FutardsCard({ className }: FutardsCardProps) {
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <div className="bg-[#ff4949] p-4 flex items-center justify-center gap-3 flex-shrink-0">
-          <div className="relative w-8 h-8 flex-shrink-0">
+          <div className="relative w-6 h-6 flex-shrink-0">
             <Image
               src="/home-icons/futards-icon.png"
               alt="Futards icon"
-              width={32}
-              height={32}
+              width={24}
+              height={24}
               className="object-contain"
             />
           </div>
