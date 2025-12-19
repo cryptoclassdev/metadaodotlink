@@ -12,7 +12,7 @@ export function BentoGrid() {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {/* Column 1: metadao.fi (5rem) + ICO Calendar (21rem) + Blog/Docs (4rem) */}
       {/* Total: 5 + 1 + 21 + 1 + 4 = 32rem */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 order-2 sm:order-none">
         <BentoCard
           title="metadao.fi"
           subtitle="The OG site"
@@ -41,7 +41,7 @@ export function BentoGrid() {
 
       {/* Column 2: VideoCard (12rem) + Futard Trade (5rem) + Futards (13rem) */}
       {/* Total: 12 + 1 + 5 + 1 + 13 = 32rem */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 order-1 sm:order-none">
         <VideoCard className="h-[12rem]" />
         <BentoCard
           title="Futard Trade"
@@ -54,7 +54,7 @@ export function BentoGrid() {
 
       {/* Column 3: Get Funded (5rem) + Animations (20rem) + Media (5rem) */}
       {/* Total: 5 + 1 + 20 + 1 + 5 = 32rem */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 order-3 sm:order-none">
         <BentoCard
           title="Get Funded"
           icon="/home-icons/getfunded-icon.png"
@@ -67,7 +67,7 @@ export function BentoGrid() {
 
       {/* Column 4: Team (20rem) + Brand Kit (5rem) + Get Token (5rem) */}
       {/* Total: 20 + 1 + 5 + 1 + 5 = 32rem */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 order-4 sm:order-none">
         <TeamCard className="h-[20rem]" />
         <BentoCard
           title="Brand Kit"
