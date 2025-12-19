@@ -40,7 +40,7 @@ export function FutardsCard({ className }: FutardsCardProps) {
         {/* Image Section */}
         <div className="flex-1 relative bg-white max-h-[240px] overflow-hidden">
           <Image
-            src="https://res.cloudinary.com/di6zkr8of/image/upload/v1766003442/futard-ss_c1eb59.png"
+            src="https://res.cloudinary.com/di6zkr8of/image/upload/v1766155361/futard-ss_c1eb59.png"
             alt="Futards"
             fill
             className="object-cover"
