@@ -11,8 +11,8 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <span className="italic text-[#ff4949] font-serif">metadao</span>
-        <span className="italic text-black font-serif">.link</span>
+        <span className="text-black">MetaDAO: </span>
+        <span className="italic text-[#ff4949] font-serif">A New Way to Fundraise</span>
       </motion.h1>
       <motion.p
         className="text-base sm:text-lg text-gray-700 max-w-2xl px-4"
