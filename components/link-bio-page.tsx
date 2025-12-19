@@ -35,26 +35,25 @@ const itemVariants = {
 
 export function LinkBioPage() {
   return (
-    <main className="relative min-h-screen bg-white px-4 sm:px-6 py-8 sm:py-12 flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute"
-          style={{
-            left: "-191px",
-            top: "801px",
-            width: "1010px",
-            height: "1010px",
-          }}
-        >
-          <Image
-            src="/images/metadaologo-vector.png"
-            alt=""
-            width={1010}
-            height={1010}
-            className="object-contain opacity-20"
-            priority
-          />
-        </div>
+    <main className="relative min-h-screen bg-white px-4 sm:px-6 py-8 sm:py-12 flex items-center justify-center">
+      <div
+        className="fixed pointer-events-none"
+        style={{
+          left: "-191px",
+          top: "801px",
+          width: "1010px",
+          height: "1010px",
+          zIndex: -1,
+        }}
+      >
+        <Image
+          src="/images/metadaologo-vector.png"
+          alt=""
+          width={1010}
+          height={1010}
+          className="object-contain opacity-20"
+          priority
+        />
       </div>
 
       <motion.div
