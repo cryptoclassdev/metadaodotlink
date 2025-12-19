@@ -9,9 +9,9 @@ import { FutardsCard } from "./futards-card"
 
 export function BentoGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr items-start">
       {/* Column 1: metadao.fi + ICO Calendar + Docs/Blog */}
-      <div className="flex flex-col gap-4 h-full">
+      <div className="flex flex-col gap-4 h-full min-h-0">
         <BentoCard
           title="metadao.fi"
           icon="/home-icons/metadaologo-icon.png"
@@ -38,7 +38,7 @@ export function BentoGrid() {
       </div>
 
       {/* Column 2: WTF video + Futard Trade + Futards */}
-      <div className="flex flex-col gap-4 h-full">
+      <div className="flex flex-col gap-4 h-full min-h-0">
         <VideoCard />
         <BentoCard
           title="Futard Trade"
@@ -50,7 +50,7 @@ export function BentoGrid() {
       </div>
 
       {/* Column 3: Get Funded + Animations */}
-      <div className="flex flex-col gap-4 h-full">
+      <div className="flex flex-col gap-4 h-full min-h-0">
         <BentoCard
           title="Get Funded"
           icon="/home-icons/getfunded-icon.png"
@@ -62,7 +62,7 @@ export function BentoGrid() {
       </div>
 
       {/* Column 4: Team + Brand Kit + Get Token */}
-      <div className="flex flex-col gap-4 h-full">
+      <div className="flex flex-col gap-4 h-full min-h-0">
         <TeamCard />
         <BentoCard
           title="Brand Kit"
