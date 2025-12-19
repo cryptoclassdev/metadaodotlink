@@ -41,11 +41,11 @@ export function LinkBioPage() {
         style={{
           bottom: 0,
           left: 0,
-          width: "60vw",
-          height: "60vw",
+          width: "50vw",
+          height: "50vw",
           maxWidth: "1010px",
           maxHeight: "1010px",
-          transform: "translate(-50%, 50%)",
+          transform: "translate(-20%, 50%)",
           zIndex: 0,
         }}
       >
