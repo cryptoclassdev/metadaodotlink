@@ -3,6 +3,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/EBGaramond-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 800;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   /* Updated color palette to match Figma design */
   --background: #fafafa; /* Off-white background */
@@ -95,7 +111,7 @@
 @theme inline {
   /* Added serif font for italic titles matching Figma */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-  --font-serif: "Georgia", "Times New Roman", serif;
+  --font-serif: "EB Garamond", "Georgia", "Times New Roman", serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
