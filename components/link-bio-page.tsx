@@ -39,17 +39,17 @@ export function LinkBioPage() {
       <div
         className="fixed pointer-events-none"
         style={{
-          left: "-5%",
-          top: "60%",
-          width: "50vw",
+          bottom: 0,
+          left: 0,
+          width: "60vw",
+          height: "60vw",
           maxWidth: "1010px",
-          height: "50vw",
           maxHeight: "1010px",
+          transform: "translate(-65%, 65%)",
           zIndex: 0,
-          opacity: 0.15,
         }}
       >
-        <Image src="/images/metadaologo-vector.png" alt="" fill className="object-contain" priority />
+        <Image src="/images/metadaologo-vector.png" alt="" fill className="object-contain opacity-20" priority />
       </div>
 
       <motion.div
