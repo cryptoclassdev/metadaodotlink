@@ -9,7 +9,7 @@ import { useState } from "react"
 const teamMembers = [
   {
     name: "Proph3t",
-    role: "Co-founder",
+    role: "Co-Founder",
     twitter: "https://x.com/metaproph3t",
     image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/proph3t_yg2ldb.jpg",
     description:
