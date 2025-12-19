@@ -24,7 +24,7 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
         className={cn(
           "relative rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg",
           isPrimary ? "bg-[#ff4949] text-white" : "bg-white border-2 border-gray-200",
-          isSmall ? "h-[5rem]" : "h-[6.25rem]",
+          isSmall ? "h-[4rem]" : "h-[5rem]",
           "p-4",
         )}
         whileHover={{
