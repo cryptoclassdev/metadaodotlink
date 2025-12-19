@@ -35,7 +35,7 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col items-center justify-center gap-2">
           {icon && (
             <div className="relative w-8 h-8 flex-shrink-0">
               <Image

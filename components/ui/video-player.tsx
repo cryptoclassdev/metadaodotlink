@@ -10,37 +10,14 @@ interface VideoPlayerProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string
   description?: string
   aspectRatio?: "16/9" | "4/3" | "1/1"
-  isOpen?: boolean
-  onOpenChange?: (isOpen: boolean) => void
 }
 
 const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
-  (
-    {
-      className,
-      thumbnailUrl,
-      videoUrl,
-      title,
-      description,
-      aspectRatio = "16/9",
-      isOpen: controlledIsOpen,
-      onOpenChange,
-      ...props
-    },
-    ref,
-  ) => {
-    const [internalIsOpen, setInternalIsOpen] = React.useState(false)
-    const isModalOpen = controlledIsOpen !== undefined ? controlledIsOpen : internalIsOpen
-
-    const setIsModalOpen = (value: boolean) => {
-      if (onOpenChange) {
-        onOpenChange(value)
-      } else {
-        setInternalIsOpen(value)
-      }
-    }
+  ({ className, thumbnailUrl, videoUrl, title, description, aspectRatio = "16/9", ...props }, ref) => {
+    const [isModalOpen, setIsModalOpen] = React.useState(false)
 
     const handleBackdropClick = (e: React.MouseEvent) => {
+      // Only close if clicking directly on the backdrop, not on children
       if (e.target === e.currentTarget) {
         setIsModalOpen(false)
       }
@@ -74,6 +51,12 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
       e.preventDefault()
       e.stopPropagation()
       setIsModalOpen(true)
+    }
+
+    const handleCloseModal = (e: React.MouseEvent) => {
+      e.preventDefault()
+      e.stopPropagation()
+      setIsModalOpen(false)
     }
 
     return (
@@ -125,12 +108,13 @@ const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
             aria-modal="true"
             role="dialog"
             onClick={handleBackdropClick}
+            onPointerEnter={(e) => e.stopPropagation()}
+            onPointerLeave={(e) => e.stopPropagation()}
           >
             <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute right-4 top-4 z-[100] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+              onClick={handleCloseModal}
+              className="absolute right-4 top-4 z-50 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
               aria-label="Close video player"
-              type="button"
             >
               <X className="h-6 w-6" />
             </button>
