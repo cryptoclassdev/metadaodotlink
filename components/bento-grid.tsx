@@ -9,16 +9,18 @@ import { FutardsCard } from "./futards-card"
 
 export function BentoGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr items-start">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 grid-rows-1">
       {/* Column 1: metadao.fi + ICO Calendar + Docs/Blog */}
-      <div className="flex flex-col gap-4 h-full min-h-0">
+      <div className="flex flex-col gap-4 h-full">
         <BentoCard
           title="metadao.fi"
           icon="/home-icons/metadaologo-icon.png"
           href="https://metadao.fi/"
           variant="primary"
         />
-        <CalendarCard />
+        <div className="flex-1">
+          <CalendarCard />
+        </div>
         <div className="grid grid-cols-2 gap-4">
           <BentoCard
             title="Blog"
@@ -38,7 +40,7 @@ export function BentoGrid() {
       </div>
 
       {/* Column 2: WTF video + Futard Trade + Futards */}
-      <div className="flex flex-col gap-4 h-full min-h-0">
+      <div className="flex flex-col gap-4 h-full">
         <VideoCard />
         <BentoCard
           title="Futard Trade"
@@ -46,24 +48,30 @@ export function BentoGrid() {
           href="https://metadao.fi/"
           variant="primary"
         />
-        <FutardsCard />
+        <div className="flex-1">
+          <FutardsCard />
+        </div>
       </div>
 
       {/* Column 3: Get Funded + Animations */}
-      <div className="flex flex-col gap-4 h-full min-h-0">
+      <div className="flex flex-col gap-4 h-full">
         <BentoCard
           title="Get Funded"
           icon="/home-icons/getfunded-icon.png"
           href="https://metadao.fi/"
           variant="primary"
         />
-        <AnimationsCard />
+        <div className="flex-1">
+          <AnimationsCard />
+        </div>
         <BentoCard title="Media" icon="/home-icons/media-icon.png" href="https://metadao.fi/" variant="primary" />
       </div>
 
       {/* Column 4: Team + Brand Kit + Get Token */}
-      <div className="flex flex-col gap-4 h-full min-h-0">
-        <TeamCard />
+      <div className="flex flex-col gap-4 h-full">
+        <div className="flex-1">
+          <TeamCard />
+        </div>
         <BentoCard
           title="Brand Kit"
           icon="/home-icons/brandkit-icon.png"
