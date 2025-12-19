@@ -29,7 +29,7 @@ const teamMembers = [
     twitter: "https://x.com/pileks",
     image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/pileks-dp_v2w1kj.jpg",
     description:
-      "Technical mastermind crafting elegant solutions that bring futarchy to life through robust and scalable blockchain systems.",
+      "The guy that moves bytes on the blockchain; protocol engineer and glass chewing connoisseur. He met Proph3t and Nallok during a month-long spiritual retreat in the mountains. In a previous life he built B2B SaaS while teaching elementary school kids functional programming. The first software he shipped on a 3.5” floppy disk, his favourite language is LOGO and he likes turtles.",
   },
   {
     name: "BlockchainFixesThis",
