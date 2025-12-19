@@ -37,9 +37,15 @@ export function BentoGrid() {
         </div>
       </div>
 
-      {/* Column 2: WTF video + Futards */}
+      {/* Column 2: WTF video + Futard Trade + Futards */}
       <div className="flex flex-col gap-4 h-full">
         <VideoCard />
+        <BentoCard
+          title="Futard Trade"
+          icon="/home-icons/futardtrade-icon.png"
+          href="https://metadao.fi/"
+          variant="primary"
+        />
         <FutardsCard />
       </div>
 
