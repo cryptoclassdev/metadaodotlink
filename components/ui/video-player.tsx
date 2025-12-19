@@ -10,14 +10,37 @@ interface VideoPlayerProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string
   description?: string
   aspectRatio?: "16/9" | "4/3" | "1/1"
+  isOpen?: boolean
+  onOpenChange?: (isOpen: boolean) => void
 }
 
 const VideoPlayer = React.forwardRef<HTMLDivElement, VideoPlayerProps>(
-  ({ className, thumbnailUrl, videoUrl, title, description, aspectRatio = "16/9", ...props }, ref) => {
-    const [isModalOpen, setIsModalOpen] = React.useState(false)
+  (
+    {
+      className,
+      thumbnailUrl,
+      videoUrl,
+      title,
+      description,
+      aspectRatio = "16/9",
+      isOpen: controlledIsOpen,
+      onOpenChange,
+      ...props
+    },
+    ref,
+  ) => {
+    const [internalIsOpen, setInternalIsOpen] = React.useState(false)
+    const isModalOpen = controlledIsOpen !== undefined ? controlledIsOpen : internalIsOpen
+
+    const setIsModalOpen = (value: boolean) => {
+      if (onOpenChange) {
+        onOpenChange(value)
+      } else {
+        setInternalIsOpen(value)
+      }
+    }
 
     const handleBackdropClick = (e: React.MouseEvent) => {
-      // Only close if clicking directly on the backdrop, not on children
       if (e.target === e.currentTarget) {
         setIsModalOpen(false)
       }
