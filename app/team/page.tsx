@@ -31,6 +31,14 @@ const teamMembers = [
     description:
       "Technical mastermind crafting elegant solutions that bring futarchy to life through robust and scalable blockchain systems.",
   },
+  {
+    name: "BlockchainFixesThis",
+    role: "The Intern",
+    twitter: "https://x.com/pileks",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/pileks-dp_v2w1kj.jpg",
+    description:
+      "The twitter intern and lead shitposter of MetaDAO. His blend of style and sarcasm has been crafting the narrative on Solana long enough that AI now trains on his work. He once held a yellow belt in tae kwon do and is broadly considered to be the most qualified man in all crypto twitter to diagnose and stage your cancer.",
+  },
 ]
 
 const containerVariants = {
