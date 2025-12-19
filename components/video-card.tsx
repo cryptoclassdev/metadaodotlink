@@ -18,7 +18,7 @@ export function VideoCard({ className }: VideoCardProps) {
   return (
     <div className={cn("relative h-full", className)}>
       <motion.div
-        className="relative h-full rounded-3xl overflow-hidden flex flex-col max-h-[280px]"
+        className="relative h-full rounded-3xl overflow-hidden flex flex-col"
         whileHover={{ scale: 1.02, y: -4 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
@@ -30,7 +30,7 @@ export function VideoCard({ className }: VideoCardProps) {
         </div>
 
         <div
-          className="flex-1 bg-[#f5f5f0] flex items-center justify-center relative group cursor-pointer min-h-[140px]"
+          className="flex-1 bg-[#f5f5f0] flex items-center justify-center relative group cursor-pointer min-h-[100px]"
           onClick={handleClick}
         >
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
