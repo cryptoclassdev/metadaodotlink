@@ -18,13 +18,13 @@ export function FutardsCard({ className }: FutardsCardProps) {
       className={cn("block h-full", className)}
     >
       <motion.div
-        className="relative h-full rounded-3xl overflow-hidden flex flex-col min-h-[280px] max-h-[320px]"
+        className="relative h-full rounded-3xl overflow-hidden flex flex-col"
         whileHover={{ scale: 1.02, y: -4 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         {/* Red Header Section */}
-        <div className="bg-[#ff4949] p-4 flex items-center gap-3">
+        <div className="bg-[#ff4949] p-4 flex items-center gap-3 flex-shrink-0">
           <div className="relative w-8 h-8 flex-shrink-0">
             <Image
               src="/home-icons/futards-icon.png"
@@ -38,12 +38,12 @@ export function FutardsCard({ className }: FutardsCardProps) {
         </div>
 
         {/* Image Section */}
-        <div className="flex-1 relative bg-white max-h-[240px] overflow-hidden">
+        <div className="flex-1 min-h-0 relative bg-white overflow-hidden">
           <Image
             src="https://res.cloudinary.com/di6zkr8of/image/upload/v1766155361/futard-ss_c1eb59.png"
             alt="Futards"
             fill
-            className="object-fit"
+            className="object-cover"
           />
         </div>
       </motion.div>
