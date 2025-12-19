@@ -18,12 +18,13 @@ export function CalendarCard({ className }: CalendarCardProps) {
       className={cn("block h-full", className)}
     >
       <motion.div
-        className="relative h-full rounded-3xl overflow-hidden bg-[#ff4949] p-4 flex flex-col max-h-[380px]"
+        className="relative h-full rounded-3xl overflow-hidden flex flex-col min-h-[280px] max-h-[400px]"
         whileHover={{ scale: 1.02, y: -4 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <div className="flex items-center gap-2 mb-3">
+        {/* Red Header Section */}
+        <div className="bg-[#ff4949] p-4 flex items-center gap-3">
           <div className="relative w-8 h-8 flex-shrink-0">
             <Image
               src="/home-icons/icocalendar-icon.png"
@@ -33,14 +34,16 @@ export function CalendarCard({ className }: CalendarCardProps) {
               className="object-contain"
             />
           </div>
-          <h3 className="text-xl font-bold text-white">ICO Calendar</h3>
+          <h3 className="text-2xl font-bold text-white">ICO Calendar</h3>
         </div>
 
-        <div className="flex-1 rounded-2xl overflow-hidden">
-          <img
+        {/* Image Section */}
+        <div className="flex-1 relative bg-white">
+          <Image
             src="https://res.cloudinary.com/di6zkr8of/image/upload/v1766003442/ico-ss_bzltnf.png"
             alt="ICO Calendar"
-            className="w-full h-full object-contain"
+            fill
+            className="object-cover"
           />
         </div>
       </motion.div>
