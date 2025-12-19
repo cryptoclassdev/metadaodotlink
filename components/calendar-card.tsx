@@ -27,8 +27,7 @@ export function CalendarCard({ className }: CalendarCardProps) {
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        {/* Red Header Section */}
-        <div className="bg-[#ff4949] p-4 flex items-center gap-3">
+        <div className="bg-[#ff4949] p-4 flex flex-col items-center justify-center gap-2">
           <div className="relative w-8 h-8 flex-shrink-0">
             <Image
               src="/home-icons/icocalendar-icon.png"
@@ -38,7 +37,7 @@ export function CalendarCard({ className }: CalendarCardProps) {
               className="object-contain"
             />
           </div>
-          <h3 className="text-2xl font-bold text-white">ICO Calendar</h3>
+          <h3 className="text-2xl font-bold text-white text-center">ICO Calendar</h3>
         </div>
 
         {/* Image Section */}
