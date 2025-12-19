@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { HeroSection } from "./hero-section"
 import { BentoGrid } from "./bento-grid"
 import { SocialFooter } from "./social-footer"
@@ -35,6 +36,22 @@ const itemVariants = {
 export function LinkBioPage() {
   return (
     <main className="relative min-h-screen bg-white px-4 sm:px-6 py-8 sm:py-12 flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div
+          className="absolute"
+          style={{
+            left: "calc(-358% + 50vw)",
+            top: "calc(-191% + 50vh)",
+            width: "52.6vw",
+            height: "82.5vh",
+            maxWidth: "1010px",
+            maxHeight: "1010px",
+          }}
+        >
+          <Image src="/images/metadaologo-vector.png" alt="" fill className="object-contain opacity-100" priority />
+        </div>
+      </div>
+
       <motion.div
         initial="hidden"
         animate="visible"
