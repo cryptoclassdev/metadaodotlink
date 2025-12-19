@@ -22,9 +22,9 @@ export function VideoCard({ className }: VideoCardProps) {
         whileHover={{ scale: 1.02, y: -4 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <div className="bg-[#ff4949] px-6 py-4 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">WTF is MetaDAO?</h3>
-          <p className="text-white text-sm sm:text-base font-medium leading-relaxed">
+        <div className="bg-[#ff4949] px-6 py-3 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">WTF is MetaDAO?</h3>
+          <p className="text-white text-xs sm:text-sm font-medium leading-snug">
             MetaDAO replaces token voting with prediction markets for governance.
           </p>
         </div>
