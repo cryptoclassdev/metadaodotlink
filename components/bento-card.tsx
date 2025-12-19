@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 
 interface BentoCardProps {
   title: string
+  subtitle?: string // Added optional subtitle prop
   icon?: string
   href: string
   variant?: "primary" | "secondary"
@@ -14,7 +15,15 @@ interface BentoCardProps {
   className?: string
 }
 
-export function BentoCard({ title, icon, href, variant = "primary", size = "medium", className }: BentoCardProps) {
+export function BentoCard({
+  title,
+  subtitle,
+  icon,
+  href,
+  variant = "primary",
+  size = "medium",
+  className,
+}: BentoCardProps) {
   const isPrimary = variant === "primary"
   const isSmall = size === "small"
 
@@ -51,7 +60,10 @@ export function BentoCard({ title, icon, href, variant = "primary", size = "medi
                 />
               </div>
             )}
-            <h3 className={cn("font-bold", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
+            <div className="flex flex-col items-center">
+              <h3 className={cn("font-bold", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
+              {subtitle && <p className="text-sm opacity-90 mt-0.5">{subtitle}</p>}
+            </div>
           </div>
         </div>
       </Link>

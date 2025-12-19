@@ -15,6 +15,7 @@ export function BentoGrid() {
       <div className="flex flex-col gap-4">
         <BentoCard
           title="metadao.fi"
+          subtitle="The OG site"
           icon="/home-icons/metadaologo-icon.png"
           href="https://metadao.fi/"
           variant="primary"
