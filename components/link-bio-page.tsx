@@ -37,25 +37,18 @@ export function LinkBioPage() {
   return (
     <main className="relative min-h-screen bg-white px-4 sm:px-6 py-8 sm:py-12 flex items-center justify-center">
       <div
-        className="fixed pointer-events-none border-4 border-red-500"
+        className="fixed pointer-events-none"
         style={{
-          left: "-191px",
-          top: "801px",
-          width: "1010px",
-          height: "1010px",
-          zIndex: 1,
+          left: "-10%",
+          top: "65%",
+          width: "52.6vw",
+          height: "52.6vw",
+          maxWidth: "1010px",
+          maxHeight: "1010px",
+          zIndex: -1,
         }}
       >
-        <Image
-          src="/images/metadaologo-vector.png"
-          alt=""
-          width={1010}
-          height={1010}
-          className="object-contain opacity-100"
-          priority
-          onLoad={() => console.log("[v0] Background logo loaded successfully")}
-          onError={(e) => console.log("[v0] Background logo failed to load", e)}
-        />
+        <Image src="/images/metadaologo-vector.png" alt="" fill className="object-contain opacity-20" priority />
       </div>
 
       <motion.div
