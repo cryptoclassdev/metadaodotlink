@@ -12,15 +12,23 @@ interface TeamCardProps {
 const teamMembers = [
   {
     name: "Proph3t",
-    role: "Co-founder",
-    image: "/images/544291433-18043960274659947-5766591717842883293-n.jpg",
-    twitter: "https://x.com/proph3t",
+    role: "Co-Founder",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/proph3t_yg2ldb.jpg",
   },
   {
     name: "Nallok",
-    role: "Co-founder",
-    image: "/professional-headshot-portrait-minimal.jpg",
-    twitter: "https://x.com/nallok",
+    role: "Co-Founder",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/nallock-dp_wkbstp.jpg",
+  },
+  {
+    name: "Pileks",
+    role: "Founding Engineer",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/pileks-dp_v2w1kj.jpg",
+  },
+  {
+    name: "BlockchainFixesThis",
+    role: "The Intern",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1766181399/the-engineer_gbodmu.jpg",
   },
 ]
 
@@ -45,14 +53,21 @@ export function TeamCard({ className }: TeamCardProps) {
           <h3 className="text-2xl font-bold text-white">Team</h3>
         </div>
 
-        {/* Image Section */}
-        <div className="flex-1 relative bg-white">
-          <Image
-            src="https://res.cloudinary.com/di6zkr8of/image/upload/v1766003442/team-member-ss_v4tsnw.png"
-            alt="Team Members"
-            fill
-            className="object-cover"
-          />
+        <div className="flex-1 bg-white p-4">
+          <div className="grid grid-cols-2 gap-3 h-full">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center bg-gray-50 rounded-xl p-3 hover:bg-gray-100 transition-colors"
+              >
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mb-2 flex-shrink-0">
+                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                </div>
+                <p className="font-semibold text-sm text-center text-gray-900 leading-tight">{member.name}</p>
+                <p className="text-xs text-gray-600 text-center leading-tight mt-0.5">{member.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </motion.div>
     </Link>

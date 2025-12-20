@@ -77,7 +77,13 @@ export function BentoGrid() {
           <AnimationsCard className="h-[20rem]" />
         </div>
         <div className="order-8 sm:order-none">
-          <BentoCard title="Media" icon="/home-icons/media-icon.png" href="https://metadao.fi/" variant="primary" />
+          <BentoCard
+            title="Media"
+            icon="/home-icons/media-icon.png"
+            href="/media"
+            variant="primary"
+            isExternal={false}
+          />
         </div>
       </div>
 
