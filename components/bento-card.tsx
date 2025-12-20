@@ -13,6 +13,7 @@ interface BentoCardProps {
   variant?: "primary" | "secondary"
   size?: "small" | "medium" | "large"
   className?: string
+  isExternal?: boolean
 }
 
 export function BentoCard({
@@ -23,6 +24,7 @@ export function BentoCard({
   variant = "primary",
   size = "medium",
   className,
+  isExternal = true,
 }: BentoCardProps) {
   const isPrimary = variant === "primary"
   const isSmall = size === "small"
@@ -39,7 +41,11 @@ export function BentoCard({
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
-      <Link href={href} target="_blank" rel="noopener noreferrer" className="block h-full">
+      <Link
+        href={href}
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className="block h-full"
+      >
         <div
           className={cn(
             "relative rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg h-full",
