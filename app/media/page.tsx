@@ -5,17 +5,11 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 
-const mediaTweetIds = [
-  "1948822243896877403",
-  "1951017233922269491",
-  "1953804344983502976",
-  "1956023221545001212",
-  "1958672887117742217",
-]
+const mediaTweetIds = ["1948822243896877403"]
 
-const firstColumn = mediaTweetIds.slice(0, 2)
-const secondColumn = mediaTweetIds.slice(2, 4)
-const thirdColumn = mediaTweetIds.slice(4, 5)
+const firstColumn = [mediaTweetIds[0]]
+const secondColumn = [mediaTweetIds[0]]
+const thirdColumn = [mediaTweetIds[0]]
 
 const MediaColumn = (props: {
   className?: string
