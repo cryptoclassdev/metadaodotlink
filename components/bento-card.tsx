@@ -1,0 +1,78 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Link from "next/link"
+import Image from "next/image"
+import { cn } from "@/lib/utils"
+
+interface BentoCardProps {
+  title: string
+  subtitle?: string
+  icon?: string
+  href: string
+  variant?: "primary" | "secondary"
+  size?: "small" | "medium" | "large"
+  className?: string
+  isExternal?: boolean
+}
+
+export function BentoCard({
+  title,
+  subtitle,
+  icon,
+  href,
+  variant = "primary",
+  size = "medium",
+  className,
+  isExternal = true,
+}: BentoCardProps) {
+  const isPrimary = variant === "primary"
+  const isSmall = size === "small"
+
+  return (
+    <motion.div
+      className={cn("relative rounded-3xl overflow-hidden", className)}
+      initial={{ scale: 1, y: 0 }}
+      whileHover={{
+        scale: 1.02,
+        y: -4,
+        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+      }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    >
+      <Link
+        href={href}
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className="block h-full"
+      >
+        <div
+          className={cn(
+            "relative rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg h-full",
+            isPrimary ? "bg-[#ff4949] text-white" : "bg-white border-2 border-gray-200",
+            isSmall ? "h-[4rem]" : "h-[5rem]",
+            "p-4",
+          )}
+        >
+          <div className="flex items-center justify-center gap-3">
+            {icon && (
+              <div className={cn("relative flex-shrink-0", isSmall ? "w-5 h-5" : "w-6 h-6")}>
+                <Image
+                  src={icon || "/placeholder.svg"}
+                  alt={`${title} icon`}
+                  width={isSmall ? 20 : 24}
+                  height={isSmall ? 20 : 24}
+                  className="object-contain"
+                />
+              </div>
+            )}
+            <div className="flex flex-col items-center">
+              <h3 className={cn("font-bold", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
+              {subtitle && <p className="text-sm opacity-90 mt-0.5">{subtitle}</p>}
+            </div>
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  )
+}
