@@ -63,6 +63,25 @@ const MediaColumn = (props: {
   )
 }
 
+const BlurIn = ({ word, className, duration = 1 }: { word: string; className?: string; duration?: number }) => {
+  const defaultVariants = {
+    hidden: { filter: "blur(10px)", opacity: 0 },
+    visible: { filter: "blur(0px)", opacity: 1 },
+  }
+
+  return (
+    <motion.h1
+      initial="hidden"
+      animate="visible"
+      transition={{ duration }}
+      variants={defaultVariants}
+      className={className}
+    >
+      {word}
+    </motion.h1>
+  )
+}
+
 export default function MediaPage() {
   const [isLoading, setIsLoading] = useState(true)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -177,14 +196,24 @@ export default function MediaPage() {
           className={`transition-opacity duration-500 ${isLoading ? "invisible opacity-0" : "visible opacity-100"}`}
           ref={containerRef}
         >
-          <div
-            className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[740px] overflow-hidden"
-            role="region"
-            aria-label="Scrolling Media"
-          >
-            <MediaColumn tweetIds={firstColumn} duration={15} />
-            <MediaColumn tweetIds={secondColumn} className="hidden md:block" duration={19} />
-            <MediaColumn tweetIds={thirdColumn} className="hidden lg:block" duration={17} />
+          <div className="relative">
+            <div
+              className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[740px] overflow-hidden"
+              role="region"
+              aria-label="Scrolling Media"
+            >
+              <MediaColumn tweetIds={firstColumn} duration={15} />
+              <MediaColumn tweetIds={secondColumn} className="hidden md:block" duration={19} />
+              <MediaColumn tweetIds={thirdColumn} className="hidden lg:block" duration={17} />
+            </div>
+
+            <div className="absolute inset-0 flex items-center justify-center bg-white/60 backdrop-blur-md z-10">
+              <BlurIn
+                word="Coming Soon"
+                duration={1.5}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#ff4949] drop-shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </div>
