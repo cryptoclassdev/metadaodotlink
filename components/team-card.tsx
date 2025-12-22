@@ -1,0 +1,79 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Link from "next/link"
+import Image from "next/image"
+import { cn } from "@/lib/utils"
+
+interface TeamCardProps {
+  className?: string
+}
+
+const teamMembers = [
+  {
+    name: "Proph3t",
+    role: "Co-Founder",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/proph3t_yg2ldb.jpg",
+  },
+  {
+    name: "Nallok",
+    role: "Co-Founder",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/nallock-dp_wkbstp.jpg",
+  },
+  {
+    name: "Pileks",
+    role: "Founding Engineer",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765191997/pileks-dp_v2w1kj.jpg",
+  },
+  {
+    name: "BlockchainFixesThis",
+    role: "The Intern",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1766181399/the-engineer_gbodmu.jpg",
+  },
+]
+
+export function TeamCard({ className }: TeamCardProps) {
+  return (
+    <Link href="/team" className={cn("block h-full", className)}>
+      <motion.div
+        className="relative h-full rounded-3xl overflow-hidden flex flex-col shadow-lg"
+        whileHover={{
+          scale: 1.02,
+          y: -4,
+          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      >
+        {/* Center-aligned header Section */}
+        <div className="bg-[#ff4949] p-4 flex items-center justify-center gap-3">
+          <div className="relative w-6 h-6 flex-shrink-0">
+            <Image src="/home-icons/team-icon.png" alt="Team icon" width={24} height={24} className="object-contain" />
+          </div>
+          <h3 className="text-2xl font-bold text-white">Team</h3>
+        </div>
+
+        <div className="flex-1 bg-white p-3 overflow-auto">
+          <div className="grid grid-cols-2 gap-2 auto-rows-fr">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center bg-gray-50 rounded-xl p-2 hover:bg-gray-100 transition-colors"
+              >
+                <div className="relative w-10 h-10 rounded-full overflow-hidden mb-1.5 flex-shrink-0">
+                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                </div>
+                <p className="font-semibold text-[9px] sm:text-[11px] text-center text-gray-900 leading-tight w-full truncate px-0.5">
+                  {member.name}
+                </p>
+                <p className="text-[7px] sm:text-[9px] text-gray-600 text-center leading-tight mt-0.5 w-full truncate px-0.5">
+                  {member.role}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  )
+}

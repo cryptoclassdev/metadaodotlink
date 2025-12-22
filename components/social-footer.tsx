@@ -1,32 +1,21 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github } from "lucide-react"
+import { Github, Youtube } from "lucide-react"
 import { TwitterIcon, TelegramIcon, DiscordIcon } from "./social-icons"
 
 const socials = [
   { icon: TwitterIcon, href: "https://x.com/MetaDAOProject", label: "Twitter" },
   { icon: TelegramIcon, href: "https://tg.metadao.fi", label: "Telegram" },
   { icon: DiscordIcon, href: "https://discord.com/invite/metadao", label: "Discord" },
+  { icon: Youtube, href: "https://youtube.com/@metadaoproject", label: "YouTube" },
   { icon: Github, href: "https://github.com/metaDAOproject", label: "GitHub" },
 ]
 
 export function SocialFooter() {
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div
-        className="flex items-center gap-2 px-4 py-2 rounded-full"
-        style={{
-          background: "rgba(255, 255, 255, 0.4)",
-          backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
-          boxShadow: `
-            inset 0 1px 1px rgba(255, 255, 255, 0.6),
-            0 0 0 1px rgba(255, 255, 255, 0.3),
-            0 2px 8px rgba(0, 0, 0, 0.04)
-          `,
-        }}
-      >
+    <div className="flex flex-col items-center gap-4 sm:gap-6">
+      <div className="flex items-center gap-2 sm:gap-6 bg-white rounded-full px-6 py-3 sm:px-8 sm:py-4 shadow-lg">
         {socials.map((social) => {
           const IconComponent = social.icon
           return (
@@ -36,18 +25,30 @@ export function SocialFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-colors hover:text-gray-700"
+              className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center text-[#ff4949] hover:text-[#ff3333] transition-colors"
               whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 600, damping: 20 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 500, damping: 20 }}
             >
-              <IconComponent className="h-5 w-5" strokeWidth={1.5} />
+              <IconComponent className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.5} />
             </motion.a>
           )
         })}
       </div>
 
-      <p className="text-[11px] text-gray-400">© 2025 metadao.link</p>
+      <div className="text-center space-y-1">
+        <p className="text-xs sm:text-sm text-gray-500">© 2025 metadao.link. All rights reserved.</p>
+        <p className="text-xs text-gray-400">
+          Created with love by{" "}
+          <a href="https://x.com/SebMontgomery" target="_blank" rel="noopener noreferrer" className="hover:underline">
+            Seb Monty
+          </a>{" "}
+          and{" "}
+          <a href="https://thecommunication.link" target="_blank" rel="noopener noreferrer" className="hover:underline">
+            thecommunication.link
+          </a>
+        </p>
+      </div>
     </div>
   )
 }

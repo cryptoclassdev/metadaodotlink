@@ -3,48 +3,64 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/EBGaramond-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 800;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
-  /* Updated to warm finance-friendly palette with coral accent */
+  /* Updated color palette to match Figma design */
   --background: #fafafa; /* Off-white background */
-  --foreground: #111111; /* Black text */
+  --foreground: #000000; /* Pure black text */
   --card: #ffffff; /* Pure white cards */
-  --card-foreground: #111111;
+  --card-foreground: #000000;
   --popover: #ffffff;
-  --popover-foreground: #111111;
-  --primary: #eb5a54; /* Coral/Salmon primary accent */
+  --popover-foreground: #000000;
+  --primary: #ff5555; /* Coral/red primary */
   --primary-foreground: #ffffff;
-  --secondary: #fff2f0; /* Light accent background */
-  --secondary-foreground: #111111;
-  --muted: #e5e5e5; /* Light grey */
-  --muted-foreground: #6b6b6b; /* Mid grey body copy */
-  --accent: #eb5a54; /* Coral accent for interactive elements */
+  --secondary: #ffe5e5; /* Light pink/coral */
+  --secondary-foreground: #000000;
+  --muted: #f5f5f5; /* Light grey */
+  --muted-foreground: #666666; /* Mid grey */
+  --accent: #ff5555; /* Coral accent */
   --accent-foreground: #ffffff;
-  --destructive: #eb5a54;
+  --destructive: #ff5555;
   --destructive-foreground: #ffffff;
-  --border: #e5e5e5; /* Light grey borders */
+  --border: #ffd5d5; /* Light coral border */
   --input: #e5e5e5;
-  --ring: #eb5a54; /* Coral focus ring */
-  --chart-1: #eb5a54;
-  --chart-2: #333333;
-  --chart-3: #6b6b6b;
-  --chart-4: #fff2f0;
-  --chart-5: #e5e5e5;
+  --ring: #ff5555; /* Coral focus ring */
+  --chart-1: #ff5555;
+  --chart-2: #000000;
+  --chart-3: #666666;
+  --chart-4: #ffe5e5;
+  --chart-5: #f5f5f5;
   --radius: 1.5rem;
   --sidebar: #fafafa;
-  --sidebar-foreground: #111111;
-  --sidebar-primary: #eb5a54;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #ff5555;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #fff2f0;
-  --sidebar-accent-foreground: #111111;
-  --sidebar-border: #e5e5e5;
-  --sidebar-ring: #eb5a54;
+  --sidebar-accent: #ffe5e5;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #ffd5d5;
+  --sidebar-ring: #ff5555;
 
-  /* Updated shadow variables for warm palette */
-  --card-shadow: 0 4px 24px -4px rgba(235, 90, 84, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
-  --card-shadow-hover: 0 12px 40px -8px rgba(235, 90, 84, 0.15), 0 4px 16px -4px rgba(0, 0, 0, 0.08);
+  /* Simplified shadow variables for cleaner design */
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
   --card-glow: none;
-  --icon-bg: #fff2f0; /* Light accent background for icons */
-  --icon-shadow: 0 2px 8px -2px rgba(235, 90, 84, 0.1);
+  --icon-bg: #ffffff;
+  --icon-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .dark {
@@ -93,7 +109,9 @@
 }
 
 @theme inline {
+  /* Added serif font for italic titles matching Figma */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  --font-serif: "EB Garamond", "Georgia", "Times New Roman", serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
