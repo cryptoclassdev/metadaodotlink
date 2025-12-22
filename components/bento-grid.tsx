@@ -9,11 +9,11 @@ import { FutardsCard } from "./futards-card"
 
 export function BentoGrid() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="flex flex-col md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {/* Column 1: metadao.fi (5rem) + ICO Calendar (21rem) + Blog/Docs (4rem) */}
       {/* Total: 5 + 1 + 21 + 1 + 4 = 32rem */}
-      <div className="flex flex-col gap-4 sm:order-none">
-        <div className="order-2 sm:order-none">
+      <div className="contents md:flex md:flex-col md:gap-4">
+        <div className="order-2 md:order-none">
           <BentoCard
             title="metadao.fi"
             subtitle="The OG site"
@@ -22,10 +22,10 @@ export function BentoGrid() {
             variant="primary"
           />
         </div>
-        <div className="order-3 sm:order-none">
+        <div className="order-3 md:order-none">
           <CalendarCard className="h-[21rem]" />
         </div>
-        <div className="grid grid-cols-2 gap-4 order-6 sm:order-none">
+        <div className="grid grid-cols-2 gap-4 order-6 md:order-none">
           <BentoCard
             title="Blog"
             icon="/home-icons/blog-icon.png"
@@ -45,11 +45,11 @@ export function BentoGrid() {
 
       {/* Column 2: VideoCard (12rem) + Futard Trade (5rem) + Futards (13rem) */}
       {/* Total: 12 + 1 + 5 + 1 + 13 = 32rem */}
-      <div className="flex flex-col gap-4 sm:order-none">
-        <div className="order-1 sm:order-none">
+      <div className="contents md:flex md:flex-col md:gap-4">
+        <div className="order-1 md:order-none">
           <VideoCard className="h-[12rem]" />
         </div>
-        <div className="order-[11] sm:order-none">
+        <div className="order-[11] md:order-none">
           <BentoCard
             title="Futard Trade"
             icon="/home-icons/futardtrade-icon.png"
@@ -57,15 +57,15 @@ export function BentoGrid() {
             variant="primary"
           />
         </div>
-        <div className="order-[10] sm:order-none">
+        <div className="order-[10] md:order-none">
           <FutardsCard className="h-[13rem]" />
         </div>
       </div>
 
       {/* Column 3: Get Funded (5rem) + Animations (20rem) + Media (5rem) */}
       {/* Total: 5 + 1 + 20 + 1 + 5 = 32rem */}
-      <div className="flex flex-col gap-4 sm:order-none">
-        <div className="order-7 sm:order-none">
+      <div className="contents md:flex md:flex-col md:gap-4">
+        <div className="order-7 md:order-none">
           <BentoCard
             title="Get Funded"
             icon="/home-icons/getfunded-icon.png"
@@ -73,10 +73,10 @@ export function BentoGrid() {
             variant="primary"
           />
         </div>
-        <div className="order-5 sm:order-none">
+        <div className="order-5 md:order-none">
           <AnimationsCard className="h-[20rem]" />
         </div>
-        <div className="order-8 sm:order-none">
+        <div className="order-8 md:order-none">
           <BentoCard
             title="Media"
             icon="/home-icons/media-icon.png"
@@ -89,11 +89,11 @@ export function BentoGrid() {
 
       {/* Column 4: Team (20rem) + Brand Kit (5rem) + Get Token (5rem) */}
       {/* Total: 20 + 1 + 5 + 1 + 5 = 32rem */}
-      <div className="flex flex-col gap-4 sm:order-none">
-        <div className="order-4 sm:order-none">
+      <div className="contents md:flex md:flex-col md:gap-4">
+        <div className="order-4 md:order-none">
           <TeamCard className="h-[20rem]" />
         </div>
-        <div className="order-9 sm:order-none">
+        <div className="order-9 md:order-none">
           <BentoCard
             title="Brand Kit"
             icon="/home-icons/brandkit-icon.png"
@@ -101,7 +101,7 @@ export function BentoGrid() {
             variant="primary"
           />
         </div>
-        <div className="order-[12] sm:order-none">
+        <div className="order-[12] md:order-none">
           <BentoCard
             title="Get $META"
             icon="/home-icons/gettoken-icon.png"

@@ -38,7 +38,16 @@ export function SocialFooter() {
 
       <div className="text-center space-y-1">
         <p className="text-xs sm:text-sm text-gray-500">© 2025 metadao.link. All rights reserved.</p>
-        <p className="text-xs text-gray-400">Created with love ❤️ by thecommunication.link</p>
+        <p className="text-xs text-gray-400">
+          Created with love by{" "}
+          <a href="https://x.com/SebMontgomery" target="_blank" rel="noopener noreferrer" className="hover:underline">
+            Seb Monty
+          </a>{" "}
+          and{" "}
+          <a href="https://thecommunication.link" target="_blank" rel="noopener noreferrer" className="hover:underline">
+            thecommunication.link
+          </a>
+        </p>
       </div>
     </div>
   )

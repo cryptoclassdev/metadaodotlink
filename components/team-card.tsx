@@ -53,18 +53,22 @@ export function TeamCard({ className }: TeamCardProps) {
           <h3 className="text-2xl font-bold text-white">Team</h3>
         </div>
 
-        <div className="flex-1 bg-white p-4">
-          <div className="grid grid-cols-2 gap-3 h-full">
+        <div className="flex-1 bg-white p-3 overflow-auto">
+          <div className="grid grid-cols-2 gap-2 auto-rows-fr">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center bg-gray-50 rounded-xl p-3 hover:bg-gray-100 transition-colors"
+                className="flex flex-col items-center bg-gray-50 rounded-xl p-2 hover:bg-gray-100 transition-colors"
               >
-                <div className="relative w-12 h-12 rounded-full overflow-hidden mb-2 flex-shrink-0">
+                <div className="relative w-10 h-10 rounded-full overflow-hidden mb-1.5 flex-shrink-0">
                   <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
                 </div>
-                <p className="font-semibold text-sm text-center text-gray-900 leading-tight">{member.name}</p>
-                <p className="text-xs text-gray-600 text-center leading-tight mt-0.5">{member.role}</p>
+                <p className="font-semibold text-[9px] sm:text-[11px] text-center text-gray-900 leading-tight w-full truncate px-0.5">
+                  {member.name}
+                </p>
+                <p className="text-[7px] sm:text-[9px] text-gray-600 text-center leading-tight mt-0.5 w-full truncate px-0.5">
+                  {member.role}
+                </p>
               </div>
             ))}
           </div>
