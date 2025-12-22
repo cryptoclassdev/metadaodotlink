@@ -63,7 +63,12 @@ const MediaColumn = (props: {
   )
 }
 
-const BlurIn = ({ word, className, duration = 1 }: { word: string; className?: string; duration?: number }) => {
+const BlurIn = ({
+  word,
+  className,
+  duration = 1,
+  delay = 0,
+}: { word: string; className?: string; duration?: number; delay?: number }) => {
   const defaultVariants = {
     hidden: { filter: "blur(10px)", opacity: 0 },
     visible: { filter: "blur(0px)", opacity: 1 },
@@ -73,7 +78,7 @@ const BlurIn = ({ word, className, duration = 1 }: { word: string; className?: s
     <motion.h1
       initial="hidden"
       animate="visible"
-      transition={{ duration }}
+      transition={{ duration, delay }}
       variants={defaultVariants}
       className={className}
     >
@@ -84,6 +89,7 @@ const BlurIn = ({ word, className, duration = 1 }: { word: string; className?: s
 
 export default function MediaPage() {
   const [isLoading, setIsLoading] = useState(true)
+  const [showBlurIn, setShowBlurIn] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const loadTimeoutRef = useRef<NodeJS.Timeout>()
 
@@ -101,10 +107,12 @@ export default function MediaPage() {
           setTimeout(() => {
             if (checkTweetsRendered()) {
               setIsLoading(false)
+              setTimeout(() => setShowBlurIn(true), 300)
             } else {
               const checkInterval = setInterval(() => {
                 if (checkTweetsRendered()) {
                   setIsLoading(false)
+                  setTimeout(() => setShowBlurIn(true), 300)
                   clearInterval(checkInterval)
                 }
               }, 500)
@@ -126,10 +134,12 @@ export default function MediaPage() {
             setTimeout(() => {
               if (checkTweetsRendered()) {
                 setIsLoading(false)
+                setTimeout(() => setShowBlurIn(true), 300)
               } else {
                 const checkInterval = setInterval(() => {
                   if (checkTweetsRendered()) {
                     setIsLoading(false)
+                    setTimeout(() => setShowBlurIn(true), 300)
                     clearInterval(checkInterval)
                   }
                 }, 500)
@@ -147,6 +157,7 @@ export default function MediaPage() {
 
     loadTimeoutRef.current = setTimeout(() => {
       setIsLoading(false)
+      setTimeout(() => setShowBlurIn(true), 300)
     }, 15000)
 
     return () => {
@@ -208,11 +219,13 @@ export default function MediaPage() {
             </div>
 
             <div className="absolute inset-0 flex items-center justify-center bg-white/60 backdrop-blur-md z-10">
-              <BlurIn
-                word="Coming Soon"
-                duration={1.5}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#ff4949] drop-shadow-lg"
-              />
+              {showBlurIn && (
+                <BlurIn
+                  word="Coming Soon"
+                  duration={1.5}
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#ff4949] drop-shadow-lg"
+                />
+              )}
             </div>
           </div>
         </div>
