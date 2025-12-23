@@ -97,7 +97,7 @@ export function BentoGrid() {
           <BentoCard
             title="Brand Kit"
             icon="/home-icons/brandkit-icon.png"
-            href="https://www.figma.com/design/7evoELIV2agMVOrfcKVUea/Brand-Kits---MetaDAO?node-id=10-989&t=Ia5gRyqXZMAykKpE-1"
+            href="https://www.figma.com/design/q7sgxTkxcAo632Avjm6oz6/Brand-Kit?node-id=0-1&t=zHX7HIKhyPOkxLAD-1"
             variant="primary"
           />
         </div>
