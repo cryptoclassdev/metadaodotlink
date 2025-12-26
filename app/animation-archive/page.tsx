@@ -1,9 +1,10 @@
-"use client"
-
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
-import { useTweet } from "react-tweet"
-import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from "react-tweet"
+import { Suspense } from "react"
+import { Tweet } from "react-tweet"
+
+// Cache this page for 24 hours
+export const revalidate = 86400
 
 const animationTweetIds = [
   "1948822243896877403",
@@ -25,28 +26,33 @@ const animationTweetIds = [
 
 const clipsTweetIds = ["1952792331641602261"]
 
-function TweetCard({ id }: { id: string }) {
-  const { data, isLoading, error } = useTweet(id)
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center">
-        <TweetSkeleton />
-      </div>
-    )
-  }
-
-  if (error || !data) {
-    return (
-      <div className="flex justify-center">
-        <TweetNotFound />
-      </div>
-    )
-  }
-
+function TweetSkeleton() {
   return (
     <div className="flex justify-center">
-      <EmbeddedTweet tweet={data} />
+      <div className="w-full max-w-[550px] border border-gray-200 rounded-lg p-4 bg-white animate-pulse">
+        <div className="flex items-start gap-3 mb-3">
+          <div className="w-12 h-12 rounded-full bg-gray-200" />
+          <div className="flex-1">
+            <div className="h-4 bg-gray-200 rounded w-24 mb-2" />
+            <div className="h-3 bg-gray-200 rounded w-32" />
+          </div>
+        </div>
+        <div className="space-y-2 mb-3">
+          <div className="h-4 bg-gray-200 rounded w-full" />
+          <div className="h-4 bg-gray-200 rounded w-5/6" />
+        </div>
+        <div className="h-64 bg-gray-200 rounded" />
+      </div>
+    </div>
+  )
+}
+
+function TweetCard({ id }: { id: string }) {
+  return (
+    <div className="flex justify-center">
+      <Suspense fallback={<TweetSkeleton />}>
+        <Tweet id={id} />
+      </Suspense>
     </div>
   )
 }
