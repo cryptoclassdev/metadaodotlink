@@ -11,7 +11,7 @@ interface BentoCardProps {
   icon?: string
   href: string
   variant?: "primary" | "secondary"
-  size?: "small" | "medium" | "large"
+  size?: "small" | "medium" | "large" | "compact"
   className?: string
   isExternal?: boolean
 }
@@ -28,6 +28,7 @@ export function BentoCard({
 }: BentoCardProps) {
   const isPrimary = variant === "primary"
   const isSmall = size === "small"
+  const isCompact = size === "compact"
 
   return (
     <motion.div
@@ -50,25 +51,25 @@ export function BentoCard({
           className={cn(
             "relative rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg h-full",
             isPrimary ? "bg-[#ff4949] text-white" : "bg-white border-2 border-gray-200",
-            isSmall ? "h-[4rem]" : "h-[5rem]",
+            isCompact ? "h-[3rem]" : isSmall ? "h-[4rem]" : "h-[5rem]",
             "p-4",
           )}
         >
           <div className="flex items-center justify-center gap-3">
             {icon && (
-              <div className={cn("relative flex-shrink-0", isSmall ? "w-5 h-5" : "w-6 h-6")}>
+              <div className={cn("relative flex-shrink-0", isCompact ? "w-4 h-4" : isSmall ? "w-5 h-5" : "w-6 h-6")}>
                 <Image
                   src={icon || "/placeholder.svg"}
                   alt={`${title} icon`}
-                  width={isSmall ? 20 : 24}
-                  height={isSmall ? 20 : 24}
+                  width={isCompact ? 16 : isSmall ? 20 : 24}
+                  height={isCompact ? 16 : isSmall ? 20 : 24}
                   className="object-contain"
                 />
               </div>
             )}
             <div className="flex flex-col items-center">
-              <h3 className={cn("font-bold", isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
-              {subtitle && <p className="text-sm opacity-90 mt-0.5">{subtitle}</p>}
+              <h3 className={cn("font-bold", isCompact ? "text-lg" : isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
+              {subtitle && <p className={cn("opacity-90 mt-0.5", isCompact ? "text-xs" : "text-sm")}>{subtitle}</p>}
             </div>
           </div>
         </div>
