@@ -10,8 +10,8 @@ import { FutardsCard } from "./futards-card"
 export function BentoGrid() {
   return (
     <div className="flex flex-col md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {/* Column 1: metadao.fi (3rem) + metadao.fi duplicate (3rem) + ICO Calendar (19rem) + Blog/Docs (4rem) */}
-      {/* Total: 3 + 1 + 3 + 1 + 19 + 1 + 4 = 32rem */}
+      {/* Column 1: metadao.fi (4.5rem) + ICO Calendar (21.5rem) + Blog/Docs (4rem) */}
+      {/* Total: 4.5 + 1 + 21.5 + 1 + 4 = 32rem */}
       <div className="contents md:flex md:flex-col md:gap-4">
         <div className="order-2 md:order-none">
           <BentoCard
@@ -23,18 +23,8 @@ export function BentoGrid() {
             size="compact"
           />
         </div>
-        <div className="order-3 md:order-none">
-          <BentoCard
-            title="01resolved"
-            subtitle="MetaDAO Analytics"
-            icon="/home-icons/metadaologo-icon.png"
-            href="https://metadao.fi/"
-            variant="primary"
-            size="compact"
-          />
-        </div>
         <div className="order-4 md:order-none">
-          <CalendarCard className="h-[19rem]" />
+          <CalendarCard className="h-[21.5rem]" />
         </div>
         <div className="grid grid-cols-2 gap-4 order-6 md:order-none">
           <BentoCard
@@ -98,11 +88,21 @@ export function BentoGrid() {
         </div>
       </div>
 
-      {/* Column 4: Team (20rem) + Brand Kit (5rem) + Get Token (5rem) */}
-      {/* Total: 20 + 1 + 5 + 1 + 5 = 32rem */}
+      {/* Column 4: Team (16.5rem) + 01resolved (4.5rem) + Brand Kit (4rem) + Get Token (4rem) */}
+      {/* Total: 16.5 + 1 + 4.5 + 1 + 4 + 1 + 4 = 32rem */}
       <div className="contents md:flex md:flex-col md:gap-4">
         <div className="order-4 md:order-none">
-          <TeamCard className="h-[20rem]" />
+          <TeamCard className="h-[16.5rem]" />
+        </div>
+        <div className="order-3 md:order-none">
+          <BentoCard
+            title="01resolved"
+            subtitle="MetaDAO Analytics"
+            icon="/home-icons/metadaologo-icon.png"
+            href="https://www.01resolved.com/"
+            variant="primary"
+            size="compact"
+          />
         </div>
         <div className="order-9 md:order-none">
           <BentoCard
@@ -110,6 +110,7 @@ export function BentoGrid() {
             icon="/home-icons/brandkit-icon.png"
             href="https://www.figma.com/design/q7sgxTkxcAo632Avjm6oz6/Brand-Kit?node-id=0-1&t=zHX7HIKhyPOkxLAD-1"
             variant="primary"
+            size="small"
           />
         </div>
         <div className="order-[12] md:order-none">
@@ -118,6 +119,7 @@ export function BentoGrid() {
             icon="/home-icons/gettoken-icon.png"
             href="https://jup.ag/tokens/METAwkXcqyXKy1AtsSgJ8JiUHwGCafnZL38n3vYmeta"
             variant="primary"
+            size="small"
           />
         </div>
       </div>
