@@ -24,7 +24,7 @@ export function AnimationsCard({ className }: AnimationsCardProps) {
       >
         {/* Center-aligned header Section */}
         <div className="bg-[#ff4949] p-4 flex items-center justify-center gap-3">
-          <div className="relative w-6 h-6 flex-shrink-0">
+          <div className="relative w-6 h-6 flex-shrink-0 flex items-center justify-center">
             <Image
               src="/home-icons/animation-icon.png"
               alt="Animations icon"
@@ -33,7 +33,7 @@ export function AnimationsCard({ className }: AnimationsCardProps) {
               className="object-contain"
             />
           </div>
-          <h3 className="text-2xl font-bold text-white">Animations</h3>
+          <h3 className="text-2xl font-bold text-white leading-none">Animations</h3>
         </div>
 
         {/* Image Section */}

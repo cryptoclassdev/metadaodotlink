@@ -61,13 +61,19 @@ export function BentoCard({
             "relative rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg h-full",
             isPrimary ? "bg-[#ff4949] text-white" : "bg-white border-2 border-gray-200",
             getHeight(),
-            isCompact && hasSubtitle ? "py-3 px-4" : "p-4",
+            // Consistent horizontal padding, vertical padding scales with size
+            isCompact ? "px-4 py-2" : isSmall ? "px-4 py-2.5" : "px-5 py-3",
           )}
         >
-          <div className={cn("flex items-center justify-center", isCompact && hasSubtitle ? "gap-2.5" : "gap-3")}>
+          <div className={cn(
+            "flex items-center justify-center",
+            // Consistent gap that scales with size variant
+            isCompact ? "gap-2" : isSmall ? "gap-2.5" : "gap-3"
+          )}>
             {icon && (
               <div className={cn(
-                "relative flex-shrink-0",
+                "relative flex-shrink-0 flex items-center justify-center",
+                // Icon container sizes aligned with text sizes
                 isCompact && hasSubtitle ? "w-5 h-5" : isCompact ? "w-4 h-4" : isSmall ? "w-5 h-5" : "w-6 h-6"
               )}>
                 <Image
@@ -79,15 +85,19 @@ export function BentoCard({
                 />
               </div>
             )}
-            <div className={cn("flex flex-col", isCompact && hasSubtitle ? "items-start" : "items-center")}>
+            <div className={cn(
+              "flex flex-col text-center",
+              // Align text to start when subtitle present for better visual balance
+              hasSubtitle ? "items-start text-left" : "items-center"
+            )}>
               <h3 className={cn(
                 "font-bold leading-tight",
                 isCompact && hasSubtitle ? "text-base" : isCompact ? "text-lg" : isSmall ? "text-xl" : "text-2xl"
               )}>{title}</h3>
               {subtitle && (
                 <p className={cn(
-                  "opacity-80 leading-tight",
-                  isCompact ? "text-xs mt-0.5" : "text-sm mt-0.5"
+                  "opacity-80 leading-tight whitespace-nowrap",
+                  isCompact ? "text-[11px] mt-0" : "text-xs mt-0.5"
                 )}>{subtitle}</p>
               )}
             </div>
