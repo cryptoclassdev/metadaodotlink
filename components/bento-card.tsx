@@ -29,6 +29,15 @@ export function BentoCard({
   const isPrimary = variant === "primary"
   const isSmall = size === "small"
   const isCompact = size === "compact"
+  const hasSubtitle = Boolean(subtitle)
+
+  // Height logic: compact with subtitle gets more space for clean look
+  const getHeight = () => {
+    if (isCompact && hasSubtitle) return "h-[4.5rem]"
+    if (isCompact) return "h-[3rem]"
+    if (isSmall) return "h-[4rem]"
+    return "h-[5rem]"
+  }
 
   return (
     <motion.div
@@ -51,25 +60,36 @@ export function BentoCard({
           className={cn(
             "relative rounded-3xl overflow-hidden transition-all duration-300 flex items-center justify-center shadow-lg h-full",
             isPrimary ? "bg-[#ff4949] text-white" : "bg-white border-2 border-gray-200",
-            isCompact ? "h-[3rem]" : isSmall ? "h-[4rem]" : "h-[5rem]",
-            "p-4",
+            getHeight(),
+            isCompact && hasSubtitle ? "py-3 px-4" : "p-4",
           )}
         >
-          <div className="flex items-center justify-center gap-3">
+          <div className={cn("flex items-center justify-center", isCompact && hasSubtitle ? "gap-2.5" : "gap-3")}>
             {icon && (
-              <div className={cn("relative flex-shrink-0", isCompact ? "w-4 h-4" : isSmall ? "w-5 h-5" : "w-6 h-6")}>
+              <div className={cn(
+                "relative flex-shrink-0",
+                isCompact && hasSubtitle ? "w-5 h-5" : isCompact ? "w-4 h-4" : isSmall ? "w-5 h-5" : "w-6 h-6"
+              )}>
                 <Image
                   src={icon || "/placeholder.svg"}
                   alt={`${title} icon`}
-                  width={isCompact ? 16 : isSmall ? 20 : 24}
-                  height={isCompact ? 16 : isSmall ? 20 : 24}
+                  width={isCompact && hasSubtitle ? 20 : isCompact ? 16 : isSmall ? 20 : 24}
+                  height={isCompact && hasSubtitle ? 20 : isCompact ? 16 : isSmall ? 20 : 24}
                   className="object-contain"
                 />
               </div>
             )}
-            <div className="flex flex-col items-center">
-              <h3 className={cn("font-bold", isCompact ? "text-lg" : isSmall ? "text-xl" : "text-2xl")}>{title}</h3>
-              {subtitle && <p className={cn("opacity-90 mt-0.5", isCompact ? "text-xs" : "text-sm")}>{subtitle}</p>}
+            <div className={cn("flex flex-col", isCompact && hasSubtitle ? "items-start" : "items-center")}>
+              <h3 className={cn(
+                "font-bold leading-tight",
+                isCompact && hasSubtitle ? "text-base" : isCompact ? "text-lg" : isSmall ? "text-xl" : "text-2xl"
+              )}>{title}</h3>
+              {subtitle && (
+                <p className={cn(
+                  "opacity-80 leading-tight",
+                  isCompact ? "text-xs mt-0.5" : "text-sm mt-0.5"
+                )}>{subtitle}</p>
+              )}
             </div>
           </div>
         </div>
