@@ -99,7 +99,7 @@ export function BentoGrid() {
             title="01resolved"
             subtitle="MetaDAO Analytics"
             icon="/home-icons/metadaologo-icon.png"
-            href="https://metadao.fi/"
+            href="https://www.01resolved.com/"
             variant="primary"
             size="compact"
           />
