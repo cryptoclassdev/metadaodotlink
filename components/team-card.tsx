@@ -53,7 +53,8 @@ export function TeamCard({ className }: TeamCardProps) {
           <h3 className="text-2xl font-bold text-white">Team</h3>
         </div>
 
-        <div className="flex-1 bg-white p-3 overflow-auto">
+        {/* Center-aligned grid Section */}
+        <div className="flex-1 bg-white p-3 overflow-auto flex items-center justify-center">
           <div className="grid grid-cols-2 gap-2 auto-rows-fr">
             {teamMembers.map((member, index) => (
               <div

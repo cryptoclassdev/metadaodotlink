@@ -37,12 +37,12 @@ export function AnimationsCard({ className }: AnimationsCardProps) {
         </div>
 
         {/* Image Section */}
-        <div className="flex-1 relative bg-white">
+        <div className="flex-1 relative bg-white p-4">
           <Image
             src="https://res.cloudinary.com/di6zkr8of/image/upload/v1766143350/screenshot-metadao_csdqii.png"
             alt="MetaDAO Animation"
             fill
-            className="object-cover"
+            className="object-contain"
           />
         </div>
       </motion.div>
