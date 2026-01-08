@@ -173,8 +173,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Life on the Front Lines",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/OSP99eE-eVk",
+      youtubeId: "OSP99eE-eVk",
     },
     engagement: {
       likes: 52,
@@ -196,8 +196,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Exercising Restraint",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/reMjMOL46cA",
+      youtubeId: "reMjMOL46cA",
     },
     engagement: {
       likes: 118,
@@ -242,8 +242,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "The Learning Curve",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/QcJ8Qt15YjA",
+      youtubeId: "QcJ8Qt15YjA",
     },
     engagement: {
       likes: 89,
@@ -265,8 +265,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "The Trading Bot",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/E_vwybsYaP4",
+      youtubeId: "E_vwybsYaP4",
     },
     engagement: {
       likes: 124,
@@ -288,8 +288,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Being a Celebrity",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/CDO4_UdmYUM",
+      youtubeId: "CDO4_UdmYUM",
     },
     engagement: {
       likes: 160,
@@ -311,8 +311,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "The Halloween Special",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/c7H7lLkvmsY",
+      youtubeId: "c7H7lLkvmsY",
     },
     engagement: {
       likes: 126,
@@ -335,7 +335,7 @@ export const METADAO_TWEETS: TweetData[] = [
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      youtubeId: "lXbAAUKP0fk",
     },
     engagement: {
       likes: 111,
