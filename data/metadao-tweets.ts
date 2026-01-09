@@ -173,8 +173,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Life on the Front Lines",
     media: {
       type: "youtube",
-      url: "https://youtu.be/OSP99eE-eVk",
-      youtubeId: "OSP99eE-eVk",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 52,
@@ -196,8 +196,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Exercising Restraint",
     media: {
       type: "youtube",
-      url: "https://youtu.be/reMjMOL46cA",
-      youtubeId: "reMjMOL46cA",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 118,
@@ -216,7 +216,7 @@ export const METADAO_TWEETS: TweetData[] = [
       avatar: "/images/meta-icon.jpg",
       verified: true,
     },
-    content: "The Scandal",
+    content: "The Learning Curve",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -229,7 +229,7 @@ export const METADAO_TWEETS: TweetData[] = [
       views: 6798,
     },
     timestamp: "Sep 27, 2025",
-    tweetUrl: "https://twitter.com/MetaDAO/status/1971645084736045448",
+    tweetUrl: "https://x.com/MetaDAOProject/status/1973826339435393470",
   },
   {
     id: "1973826339435393470",
@@ -239,11 +239,11 @@ export const METADAO_TWEETS: TweetData[] = [
       avatar: "/images/meta-icon.jpg",
       verified: true,
     },
-    content: "The Learning Curve",
+    content: "The Scandal",
     media: {
       type: "youtube",
-      url: "https://youtu.be/QcJ8Qt15YjA",
-      youtubeId: "QcJ8Qt15YjA",
+      url: "https://youtu.be/43AMzM3KwCs",
+      youtubeId: "43AMzM3KwCs",
     },
     engagement: {
       likes: 89,
@@ -252,7 +252,7 @@ export const METADAO_TWEETS: TweetData[] = [
       views: 5963,
     },
     timestamp: "Oct 3, 2025",
-    tweetUrl: "https://twitter.com/MetaDAO/status/1973826339435393470",
+    tweetUrl: "https://x.com/MetaDAOProject/status/1971645084736045448",
   },
   {
     id: "1976364501088796746",
@@ -265,8 +265,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "The Trading Bot",
     media: {
       type: "youtube",
-      url: "https://youtu.be/E_vwybsYaP4",
-      youtubeId: "E_vwybsYaP4",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 124,
@@ -288,8 +288,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Being a Celebrity",
     media: {
       type: "youtube",
-      url: "https://youtu.be/CDO4_UdmYUM",
-      youtubeId: "CDO4_UdmYUM",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 160,
@@ -311,8 +311,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "The Halloween Special",
     media: {
       type: "youtube",
-      url: "https://youtu.be/c7H7lLkvmsY",
-      youtubeId: "c7H7lLkvmsY",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 126,
@@ -335,7 +335,7 @@ export const METADAO_TWEETS: TweetData[] = [
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "lXbAAUKP0fk",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 111,
